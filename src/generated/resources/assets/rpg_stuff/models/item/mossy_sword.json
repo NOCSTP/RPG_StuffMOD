@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "rpg_stuff:item/swords/mossy_sword"
+  }
+}

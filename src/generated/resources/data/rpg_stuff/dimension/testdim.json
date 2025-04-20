@@ -1,0 +1,11 @@
+{
+  "type": "rpg_stuff:testdim_type",
+  "generator": {
+    "type": "minecraft:noise",
+    "biome_source": {
+      "type": "minecraft:fixed",
+      "biome": "minecraft:the_void"
+    },
+    "settings": "minecraft:floating_islands"
+  }
+}

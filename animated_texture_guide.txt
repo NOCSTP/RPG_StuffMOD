@@ -1,0 +1,22 @@
+How to create an animated texture for Minecraft:
+
+1. Your texture file (legendary_swordn2.png) must have multiple frames stacked vertically.
+2. Each frame should have the same width and height (usually 16x16 pixels for items).
+3. For example, if you want 8 frames of animation, your image should be 16x128 pixels (16x16 * 8).
+4. The mcmeta file controls the animation speed and order.
+   - "frametime": Number of ticks each frame should be displayed (20 ticks = 1 second)
+   - "interpolate": When true, Minecraft will blend between frames for smoother animation
+   - "frames": Optional array to specify frame display order (can repeat frames or display in custom order)
+
+Example:
+- For a glowing effect: Create several frames with varying brightness
+- For a pulsing effect: Gradually increase/decrease brightness or add a colored overlay
+- For a color-changing effect: Change hue across frames
+
+To create an animated texture:
+1. Use an image editor like GIMP, Photoshop, or Aseprite
+2. Create each frame of animation
+3. Stack them vertically in a single PNG file
+4. Place both the PNG and mcmeta file in the same directory with the same name
+
+Note: Make sure your image follows the power-of-two rule for width and height dimensions (16, 32, 64, etc.). 

@@ -1,0 +1,38 @@
+HOW TO FIX THE LEGENDARY_SWORDN2 ANIMATION:
+
+1. Your legendary_swordn2.png needs to be reformatted with multiple frames stacked vertically.
+
+Step-by-step instructions:
+1. Open your existing legendary_swordn2.png in an image editor (like GIMP, Photoshop, or Aseprite)
+2. Create a new image with:
+   - Same width as your original texture (e.g., 16 pixels)
+   - Height = original height × number of animation frames (e.g., 16 × 8 = 128 pixels)
+3. Copy your original texture and modify it slightly for each frame:
+   - Frame 1: Original texture
+   - Frame 2: Add slight glow effect
+   - Frame 3: Increase glow
+   - Frame 4: Maximum glow
+   - Frame 5: Decrease glow
+   - Frame 6: Slight glow
+   - Frame 7: Original texture
+   - Frame 8: Slight color shift
+
+4. Place each frame vertically in the new image, one below the other
+5. Save as legendary_swordn2.png, replacing the original file
+6. Make sure legendary_swordn2.mcmeta is in the same directory with the animation settings
+
+EXAMPLE MCMETA (already updated for you):
+{
+  "animation": {
+    "frametime": 2,
+    "interpolate": true,
+    "frames": [0, 1, 2, 3, 4, 5, 6, 7]
+  }
+}
+
+Notes:
+- "frametime": 2 means each frame displays for 2 game ticks (10 frames per second)
+- "interpolate": true means Minecraft will blend between frames for smoother animation
+- The "frames" array specifies the order in which frames are displayed
+
+After making these changes, restart Minecraft to see the animated sword. 
