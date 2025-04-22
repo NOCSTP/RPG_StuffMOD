@@ -1,4 +1,4 @@
-package net.nocst.rpg_stuff.entity.skelets.golden_skeleton;// Made with Blockbench 4.12.4
+package net.nocst.rpg_stuff.entity.golden_era.golden_skeleton;// Made with Blockbench 4.12.4
 // Exported for Minecraft version 1.17 or later with Mojang mappings
 // Paste this class into your mod and generate all required imports
 
@@ -102,9 +102,15 @@ public class GoldenSkeletonModel<T extends GoldenSkeletonEntity> extends Hierarc
 	public void setupAnim(T pEntity, float pLimbSwing, float pLimbSwingAmount, float pAgeInTicks, float pNetHeadYaw, float pHeadPitch) {
 		this.root().getAllParts().forEach(ModelPart::resetPose);
 		this.applyHeadRotation(pNetHeadYaw, pHeadPitch, pAgeInTicks);
-		this.animateWalk(GoldenSkeletonAnimationsDefinitions.WALKINGBADIDLE, pLimbSwing, pLimbSwingAmount, 2f, 2.5f);
-		this.animate(((GoldenSkeletonEntity) pEntity).idleAnimationsState, GoldenSkeletonAnimationsDefinitions.STAYSEC, pAgeInTicks, 2f);
-		this.animate(((GoldenSkeletonEntity) pEntity).attackAnimationState, GoldenSkeletonAnimationsDefinitions.HIT, pAgeInTicks, 2f);
+		GoldenSkeletonEntity goldenSkeleton = ((GoldenSkeletonEntity) pEntity);
+
+		if (goldenSkeleton.isHurtAnimation()){
+			this.animate(goldenSkeleton.hurtAnimationState, GoldenSkeletonAnimationsDefinitions.HITING, pAgeInTicks);
+		} else {
+			this.animateWalk(GoldenSkeletonAnimationsDefinitions.WALKINGBADIDLE, pLimbSwing, pLimbSwingAmount, 2f, 2.5f);
+			this.animate(goldenSkeleton.idleAnimationsState, GoldenSkeletonAnimationsDefinitions.STAYSEC, pAgeInTicks, 2f);
+			this.animate(goldenSkeleton.attackAnimationState, GoldenSkeletonAnimationsDefinitions.HIT, pAgeInTicks, 2f);
+		}
 
 	}
 

@@ -1,4 +1,4 @@
-package net.nocst.rpg_stuff.entity.skelets.golden_skeleton;
+package net.nocst.rpg_stuff.entity.golden_era.golden_skeleton;
 
 import javax.annotation.Nullable;
 
@@ -7,15 +7,11 @@ import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.world.DifficultyInstance;
-import net.minecraft.world.entity.AnimationState;
-import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.EquipmentSlot;
-import net.minecraft.world.entity.MobSpawnType;
-import net.minecraft.world.entity.Pose;
-import net.minecraft.world.entity.SpawnGroupData;
-import net.minecraft.world.entity.TamableAnimal;
+import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.entity.ai.goal.Goal;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.monster.Monster;
@@ -24,9 +20,15 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
+import net.nocst.rpg_stuff.entity.basic.BasicAttackGoal;
+import net.nocst.rpg_stuff.entity.basic.BasicEntity;
 
-public class GoldenSkeletonEntity extends Monster {
+import java.util.EnumSet;
+
+public class GoldenSkeletonEntity extends BasicEntity {
     private static final EntityDataAccessor<Boolean> ATTACKING =
+            SynchedEntityData.defineId(GoldenSkeletonEntity.class, EntityDataSerializers.BOOLEAN);
+    private static final EntityDataAccessor<Boolean> IS_HURTING =
             SynchedEntityData.defineId(GoldenSkeletonEntity.class, EntityDataSerializers.BOOLEAN);
 
     public final AnimationState attackAnimationState = new AnimationState();
@@ -37,13 +39,26 @@ public class GoldenSkeletonEntity extends Monster {
 
     public final AnimationState idleAnimationsState = new AnimationState();
     private int idleAnimationsTimeout = 0;
+    public final AnimationState hurtAnimationState = new AnimationState();
+    private int hurtAnimationTimeout = 0;
+    private boolean isHurt = false;
+    private int hurtTicksLeft;
+
+
+
 
     @Override
     public void tick(){
         super.tick();
 
-        if(this.level().isClientSide()){
+        if (this.level().isClientSide()) {
             this.setupAnimationStates();
+        } else {
+            if (this.isHurtAnimation()) {
+                if (--hurtTicksLeft <= 0) {
+                    this.setHurtAnimation(false);
+                }
+            }
         }
     }
 
@@ -71,11 +86,33 @@ public class GoldenSkeletonEntity extends Monster {
         } else {
             --this.attackAnimationTimeout;
         }
-        
-        // Only stop the animation when it's complete, not immediately when not attacking
         if (!this.isAttacking() && attackAnimationTimeout <= 0){
             attackAnimationState.stop();
         }
+
+        if (this.isHurtAnimation()) {
+            if (!hurtAnimationState.isStarted()) {
+                hurtAnimationState.start(this.tickCount);
+            }
+        } else {
+            if (hurtAnimationState.isStarted()) {
+                hurtAnimationState.stop();
+            }
+        }
+
+
+    }
+
+    @Override
+    public boolean hurt(DamageSource source, float amount) {
+        boolean result = super.hurt(source, amount);
+
+        if (result) {
+            this.setHurtAnimation(true);
+            this.hurtTicksLeft = 10; // тримаємо прапорець 10 тік
+        }
+
+        return result;
     }
     
     @Override
@@ -94,6 +131,18 @@ public class GoldenSkeletonEntity extends Monster {
         return this.getDeltaMovement().horizontalDistanceSqr() > 0.001;
     }
 
+    public boolean isAttacking(){
+        return this.entityData.get(ATTACKING);
+    }
+
+    public boolean isHurtAnimation() {
+        return this.entityData.get(IS_HURTING);
+    }
+
+    public void setHurtAnimation(boolean hurt) {
+        this.entityData.set(IS_HURTING, hurt);
+    }
+
     public static AttributeSupplier.Builder createAttributes(){
         return Monster.createMonsterAttributes()
                 .add(Attributes.FOLLOW_RANGE, 35.0D)
@@ -107,19 +156,18 @@ public class GoldenSkeletonEntity extends Monster {
     protected void defineSynchedData() {
         super.defineSynchedData();
         this.entityData.define(ATTACKING, false);
+        this.entityData.define(IS_HURTING, false);
     }
 
     public void setAttacking(boolean attacking){
         this.entityData.set(ATTACKING, attacking);
     }
 
-    public boolean isAttacking(){
-        return this.entityData.get(ATTACKING);
-    }
+
 
     @Override
     protected void registerGoals() {
-        this.goalSelector.addGoal(2, new GoldenSkeletonAttackGoal(this, 1.0D, true));
+        this.goalSelector.addGoal(2, new BasicAttackGoal(this, 1.0D, true));
 
         this.targetSelector.addGoal(1, new HurtByTargetGoal(this));
         this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, Player.class, true));

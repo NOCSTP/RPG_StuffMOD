@@ -1,7 +1,9 @@
 package net.nocst.rpg_stuff;
 
-import net.nocst.rpg_stuff.entity.skelets.golden_skeleton.GoldenSkeletonEntity;
-import net.nocst.rpg_stuff.entity.skelets.golden_skeleton.GoldenSkeletonRender;
+import net.nocst.rpg_stuff.entity.golden_era.golden_skeleton.GoldenSkeletonEntity;
+import net.nocst.rpg_stuff.entity.golden_era.golden_skeleton.GoldenSkeletonRender;
+import net.nocst.rpg_stuff.entity.golden_era.golden_warrior.GoldenWarriorEntity;
+import net.nocst.rpg_stuff.entity.golden_era.golden_warrior.GoldenWarriorRender;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -17,8 +19,6 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.nocst.rpg_stuff.block.ModBlocks;
 import net.nocst.rpg_stuff.entity.ModEntity;
-import net.nocst.rpg_stuff.entity.skeleton.SkeletonRender;
-import net.nocst.rpg_stuff.entity.skeleton.SkeletonEntity;
 import net.nocst.rpg_stuff.items.ModItems;
 
 // The value here should match an entry in the META-INF/mods.toml file
@@ -43,19 +43,21 @@ public class RPGSTUFF {
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
+
+        LOGGER.debug("debug mode is on");
     }
 
     private void entityAttributeEvent(EntityAttributeCreationEvent event) {
-        event.put(ModEntity.SKELETON.get(), SkeletonEntity.createAttributes().build());
         event.put(ModEntity.GOLDEN_SKELETON.get(), GoldenSkeletonEntity.createAttributes().build());
+        event.put(ModEntity.GOLDEN_WARRIOR.get(), GoldenWarriorEntity.createAttributes().build());
     }
 
     @Mod.EventBusSubscriber(modid = MODID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
     public static class ClientModEvents{
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event){
-            EntityRenderers.register(ModEntity.SKELETON.get(), SkeletonRender::new);
             EntityRenderers.register(ModEntity.GOLDEN_SKELETON.get(), GoldenSkeletonRender::new);
+            EntityRenderers.register(ModEntity.GOLDEN_WARRIOR.get(), GoldenWarriorRender::new);
         }
     }
 }

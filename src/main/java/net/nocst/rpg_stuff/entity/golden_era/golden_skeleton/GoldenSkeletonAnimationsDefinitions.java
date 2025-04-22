@@ -1,4 +1,4 @@
-package net.nocst.rpg_stuff.entity.skelets.golden_skeleton;
+package net.nocst.rpg_stuff.entity.golden_era.golden_skeleton;
 
 import net.minecraft.client.animation.AnimationChannel;
 import net.minecraft.client.animation.AnimationDefinition;

@@ -21,6 +21,8 @@ public class ModItems {
     //eggs
     public static final RegistryObject<Item> GOLDEN_SKELETON_SPAWN_EGGS = ITEMS.register("golden_skeleton_spawn_egg",
             ()-> new ForgeSpawnEggItem(ModEntity.GOLDEN_SKELETON, 0x7e9680, 0x5d1c5, new Item.Properties()));
+    public static final RegistryObject<Item> GOLDEN_WARRIOR_SPAWN_EGGS = ITEMS.register("golden_warrior_spawn_egg",
+            ()-> new ForgeSpawnEggItem(ModEntity.GOLDEN_WARRIOR, 0x7e9689, 0x6d1c5, new Item.Properties()));
 
     //keys
     public static final RegistryObject<Item> KEY = registerItem("key", new Item.Properties());
