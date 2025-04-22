@@ -8,8 +8,9 @@ import net.minecraft.client.animation.KeyframeAnimations;
 public class GoldenSkeletonAnimationsDefinitions {
 
 
-    public static final AnimationDefinition WALKINGBADIDLE = AnimationDefinition.Builder.withLength(3.04167f).looping()
-            .addAnimation("Head",
+
+    public static final AnimationDefinition WALKINGBADIDLE = AnimationDefinition.Builder.withLength(3f).looping()
+            .addAnimation("head",
                     new AnimationChannel(AnimationChannel.Targets.POSITION,
                             new Keyframe(0f, KeyframeAnimations.posVec(0f, 0f, 0.3f),
                                     AnimationChannel.Interpolations.LINEAR),
@@ -23,7 +24,7 @@ public class GoldenSkeletonAnimationsDefinitions {
                                     AnimationChannel.Interpolations.LINEAR),
                             new Keyframe(3f, KeyframeAnimations.posVec(0f, 0f, 0.26f),
                                     AnimationChannel.Interpolations.LINEAR)))
-            .addAnimation("Head",
+            .addAnimation("head",
                     new AnimationChannel(AnimationChannel.Targets.ROTATION,
                             new Keyframe(0f, KeyframeAnimations.degreeVec(0f, 0f, 0f),
                                     AnimationChannel.Interpolations.LINEAR),
@@ -55,7 +56,7 @@ public class GoldenSkeletonAnimationsDefinitions {
                                     AnimationChannel.Interpolations.LINEAR),
                             new Keyframe(3f, KeyframeAnimations.degreeVec(0f, 0f, 0f),
                                     AnimationChannel.Interpolations.LINEAR)))
-            .addAnimation("RightArm",
+            .addAnimation("rightArm",
                     new AnimationChannel(AnimationChannel.Targets.ROTATION,
                             new Keyframe(0f, KeyframeAnimations.degreeVec(25f, 0f, 0f),
                                     AnimationChannel.Interpolations.LINEAR),
@@ -71,7 +72,7 @@ public class GoldenSkeletonAnimationsDefinitions {
                                     AnimationChannel.Interpolations.LINEAR),
                             new Keyframe(3f, KeyframeAnimations.degreeVec(24.98f, 1.06f, -2.27f),
                                     AnimationChannel.Interpolations.LINEAR)))
-            .addAnimation("LeftArm",
+            .addAnimation("leftArm",
                     new AnimationChannel(AnimationChannel.Targets.ROTATION,
                             new Keyframe(0f, KeyframeAnimations.degreeVec(-25f, 0f, 0f),
                                     AnimationChannel.Interpolations.LINEAR),
@@ -87,7 +88,7 @@ public class GoldenSkeletonAnimationsDefinitions {
                                     AnimationChannel.Interpolations.LINEAR),
                             new Keyframe(3f, KeyframeAnimations.degreeVec(-25f, 0f, 0f),
                                     AnimationChannel.Interpolations.LINEAR)))
-            .addAnimation("RightLeg",
+            .addAnimation("rightLeg",
                     new AnimationChannel(AnimationChannel.Targets.ROTATION,
                             new Keyframe(0f, KeyframeAnimations.degreeVec(-25f, 0f, 0f),
                                     AnimationChannel.Interpolations.LINEAR),
@@ -103,7 +104,7 @@ public class GoldenSkeletonAnimationsDefinitions {
                                     AnimationChannel.Interpolations.LINEAR),
                             new Keyframe(3f, KeyframeAnimations.degreeVec(-25f, 0f, 0f),
                                     AnimationChannel.Interpolations.LINEAR)))
-            .addAnimation("LeftLeg",
+            .addAnimation("leftLeg",
                     new AnimationChannel(AnimationChannel.Targets.ROTATION,
                             new Keyframe(0f, KeyframeAnimations.degreeVec(25f, 0f, 0f),
                                     AnimationChannel.Interpolations.LINEAR),
@@ -119,22 +120,22 @@ public class GoldenSkeletonAnimationsDefinitions {
                                     AnimationChannel.Interpolations.LINEAR),
                             new Keyframe(3f, KeyframeAnimations.degreeVec(25f, 0f, 0f),
                                     AnimationChannel.Interpolations.LINEAR))).build();
-    public static final AnimationDefinition STAYSEC = AnimationDefinition.Builder.withLength(12f)
-            .addAnimation("Head",
+    public static final AnimationDefinition STAYSEC = AnimationDefinition.Builder.withLength(12f).looping()
+            .addAnimation("head",
                     new AnimationChannel(AnimationChannel.Targets.POSITION,
                             new Keyframe(0f, KeyframeAnimations.posVec(0f, 0f, 0f),
                                     AnimationChannel.Interpolations.LINEAR),
                             new Keyframe(6f, KeyframeAnimations.posVec(0f, 0f, -2f),
                                     AnimationChannel.Interpolations.LINEAR),
-                            new Keyframe(12f, KeyframeAnimations.posVec(0f, 0f, 0f),
+                            new Keyframe(10f, KeyframeAnimations.posVec(0f, 0f, 0f),
                                     AnimationChannel.Interpolations.LINEAR)))
-            .addAnimation("Head",
+            .addAnimation("head",
                     new AnimationChannel(AnimationChannel.Targets.ROTATION,
                             new Keyframe(0f, KeyframeAnimations.degreeVec(0f, 0f, 0f),
                                     AnimationChannel.Interpolations.LINEAR),
                             new Keyframe(6f, KeyframeAnimations.degreeVec(10f, 0f, 0f),
                                     AnimationChannel.Interpolations.LINEAR),
-                            new Keyframe(12f, KeyframeAnimations.degreeVec(0f, 0f, 0f),
+                            new Keyframe(10f, KeyframeAnimations.degreeVec(0f, 0f, 0f),
                                     AnimationChannel.Interpolations.LINEAR)))
             .addAnimation("waist",
                     new AnimationChannel(AnimationChannel.Targets.ROTATION,
@@ -144,24 +145,24 @@ public class GoldenSkeletonAnimationsDefinitions {
                                     AnimationChannel.Interpolations.LINEAR),
                             new Keyframe(12f, KeyframeAnimations.degreeVec(0f, 0f, 0f),
                                     AnimationChannel.Interpolations.LINEAR)))
-            .addAnimation("RightArm",
+            .addAnimation("rightArm",
                     new AnimationChannel(AnimationChannel.Targets.POSITION,
                             new Keyframe(0f, KeyframeAnimations.posVec(0f, 0f, 0f),
                                     AnimationChannel.Interpolations.LINEAR),
                             new Keyframe(6f, KeyframeAnimations.posVec(0f, -1f, -1f),
                                     AnimationChannel.Interpolations.LINEAR),
-                            new Keyframe(12f, KeyframeAnimations.posVec(0f, 0f, 0f),
+                            new Keyframe(10f, KeyframeAnimations.posVec(0f, 0f, 0f),
                                     AnimationChannel.Interpolations.LINEAR)))
-            .addAnimation("LeftArm",
+            .addAnimation("leftArm",
                     new AnimationChannel(AnimationChannel.Targets.POSITION,
                             new Keyframe(0f, KeyframeAnimations.posVec(0f, 0f, 0f),
                                     AnimationChannel.Interpolations.LINEAR),
                             new Keyframe(6f, KeyframeAnimations.posVec(0f, -1f, -1f),
                                     AnimationChannel.Interpolations.LINEAR),
-                            new Keyframe(12f, KeyframeAnimations.posVec(0f, 0f, 0f),
+                            new Keyframe(10f, KeyframeAnimations.posVec(0f, 0f, 0f),
                                     AnimationChannel.Interpolations.LINEAR))).build();
     public static final AnimationDefinition HITING = AnimationDefinition.Builder.withLength(0.5f)
-            .addAnimation("Head",
+            .addAnimation("head",
                     new AnimationChannel(AnimationChannel.Targets.POSITION,
                             new Keyframe(0f, KeyframeAnimations.posVec(0f, 0f, 0f),
                                     AnimationChannel.Interpolations.LINEAR),
@@ -169,7 +170,7 @@ public class GoldenSkeletonAnimationsDefinitions {
                                     AnimationChannel.Interpolations.LINEAR),
                             new Keyframe(0.5f, KeyframeAnimations.posVec(0f, 0f, 0f),
                                     AnimationChannel.Interpolations.LINEAR)))
-            .addAnimation("Head",
+            .addAnimation("head",
                     new AnimationChannel(AnimationChannel.Targets.ROTATION,
                             new Keyframe(0f, KeyframeAnimations.degreeVec(0f, 0f, 0f),
                                     AnimationChannel.Interpolations.LINEAR),
@@ -185,7 +186,7 @@ public class GoldenSkeletonAnimationsDefinitions {
                                     AnimationChannel.Interpolations.LINEAR),
                             new Keyframe(0.5f, KeyframeAnimations.degreeVec(0f, 0f, 0f),
                                     AnimationChannel.Interpolations.LINEAR)))
-            .addAnimation("RightArm",
+            .addAnimation("rightArm",
                     new AnimationChannel(AnimationChannel.Targets.ROTATION,
                             new Keyframe(0f, KeyframeAnimations.degreeVec(0f, 0f, 0f),
                                     AnimationChannel.Interpolations.LINEAR),
@@ -193,7 +194,7 @@ public class GoldenSkeletonAnimationsDefinitions {
                                     AnimationChannel.Interpolations.LINEAR),
                             new Keyframe(0.5f, KeyframeAnimations.degreeVec(-0.25f, 0f, 0.02f),
                                     AnimationChannel.Interpolations.LINEAR)))
-            .addAnimation("LeftArm",
+            .addAnimation("leftArm",
                     new AnimationChannel(AnimationChannel.Targets.ROTATION,
                             new Keyframe(0f, KeyframeAnimations.degreeVec(0f, 0f, 0f),
                                     AnimationChannel.Interpolations.LINEAR),
@@ -202,7 +203,7 @@ public class GoldenSkeletonAnimationsDefinitions {
                             new Keyframe(0.5f, KeyframeAnimations.degreeVec(-0.25f, 0f, 0.02f),
                                     AnimationChannel.Interpolations.LINEAR))).build();
     public static final AnimationDefinition HIT = AnimationDefinition.Builder.withLength(0.5f)
-            .addAnimation("Head",
+            .addAnimation("head",
                     new AnimationChannel(AnimationChannel.Targets.POSITION,
                             new Keyframe(0f, KeyframeAnimations.posVec(0f, 0f, 0f),
                                     AnimationChannel.Interpolations.LINEAR),
@@ -210,7 +211,7 @@ public class GoldenSkeletonAnimationsDefinitions {
                                     AnimationChannel.Interpolations.LINEAR),
                             new Keyframe(0.5f, KeyframeAnimations.posVec(0f, 0f, 0f),
                                     AnimationChannel.Interpolations.LINEAR)))
-            .addAnimation("Head",
+            .addAnimation("head",
                     new AnimationChannel(AnimationChannel.Targets.ROTATION,
                             new Keyframe(0f, KeyframeAnimations.degreeVec(0f, 0f, 0f),
                                     AnimationChannel.Interpolations.LINEAR),
@@ -226,7 +227,7 @@ public class GoldenSkeletonAnimationsDefinitions {
                                     AnimationChannel.Interpolations.LINEAR),
                             new Keyframe(0.5f, KeyframeAnimations.degreeVec(0f, 0f, 0f),
                                     AnimationChannel.Interpolations.LINEAR)))
-            .addAnimation("RightArm",
+            .addAnimation("rightArm",
                     new AnimationChannel(AnimationChannel.Targets.POSITION,
                             new Keyframe(0f, KeyframeAnimations.posVec(0f, 0f, 0f),
                                     AnimationChannel.Interpolations.LINEAR),
@@ -234,7 +235,7 @@ public class GoldenSkeletonAnimationsDefinitions {
                                     AnimationChannel.Interpolations.LINEAR),
                             new Keyframe(0.5f, KeyframeAnimations.posVec(0f, 0f, 0f),
                                     AnimationChannel.Interpolations.LINEAR)))
-            .addAnimation("RightArm",
+            .addAnimation("rightArm",
                     new AnimationChannel(AnimationChannel.Targets.ROTATION,
                             new Keyframe(0f, KeyframeAnimations.degreeVec(0f, 0f, 0f),
                                     AnimationChannel.Interpolations.LINEAR),
@@ -244,7 +245,7 @@ public class GoldenSkeletonAnimationsDefinitions {
                                     AnimationChannel.Interpolations.LINEAR),
                             new Keyframe(0.5f, KeyframeAnimations.degreeVec(0.47f, -1.1f, 1.84f),
                                     AnimationChannel.Interpolations.LINEAR)))
-            .addAnimation("LeftArm",
+            .addAnimation("leftArm",
                     new AnimationChannel(AnimationChannel.Targets.POSITION,
                             new Keyframe(0f, KeyframeAnimations.posVec(0f, 0f, 0f),
                                     AnimationChannel.Interpolations.LINEAR),
@@ -252,7 +253,7 @@ public class GoldenSkeletonAnimationsDefinitions {
                                     AnimationChannel.Interpolations.LINEAR),
                             new Keyframe(0.5f, KeyframeAnimations.posVec(0f, 0f, 0f),
                                     AnimationChannel.Interpolations.LINEAR)))
-            .addAnimation("LeftArm",
+            .addAnimation("leftArm",
                     new AnimationChannel(AnimationChannel.Targets.ROTATION,
                             new Keyframe(0f, KeyframeAnimations.degreeVec(0f, 0f, 0f),
                                     AnimationChannel.Interpolations.LINEAR),
@@ -260,8 +261,8 @@ public class GoldenSkeletonAnimationsDefinitions {
                                     AnimationChannel.Interpolations.LINEAR),
                             new Keyframe(0.5f, KeyframeAnimations.degreeVec(0f, 0f, 0f),
                                     AnimationChannel.Interpolations.LINEAR))).build();
-    public static final AnimationDefinition SWORD = AnimationDefinition.Builder.withLength(0.7916766f)
-            .addAnimation("Head",
+    public static final AnimationDefinition SWORD = AnimationDefinition.Builder.withLength(0.79167f)
+            .addAnimation("head",
                     new AnimationChannel(AnimationChannel.Targets.POSITION,
                             new Keyframe(0f, KeyframeAnimations.posVec(0f, 0f, 0f),
                                     AnimationChannel.Interpolations.LINEAR),
@@ -271,7 +272,7 @@ public class GoldenSkeletonAnimationsDefinitions {
                                     AnimationChannel.Interpolations.LINEAR),
                             new Keyframe(0.75f, KeyframeAnimations.posVec(0f, 0f, 0f),
                                     AnimationChannel.Interpolations.LINEAR)))
-            .addAnimation("Head",
+            .addAnimation("head",
                     new AnimationChannel(AnimationChannel.Targets.ROTATION,
                             new Keyframe(0f, KeyframeAnimations.degreeVec(0f, 0f, 0f),
                                     AnimationChannel.Interpolations.LINEAR),
@@ -289,7 +290,7 @@ public class GoldenSkeletonAnimationsDefinitions {
                                     AnimationChannel.Interpolations.LINEAR),
                             new Keyframe(0.75f, KeyframeAnimations.degreeVec(0f, 0f, 0f),
                                     AnimationChannel.Interpolations.LINEAR)))
-            .addAnimation("RightArm",
+            .addAnimation("rightArm",
                     new AnimationChannel(AnimationChannel.Targets.POSITION,
                             new Keyframe(0f, KeyframeAnimations.posVec(0f, 0f, 0f),
                                     AnimationChannel.Interpolations.LINEAR),
@@ -299,7 +300,7 @@ public class GoldenSkeletonAnimationsDefinitions {
                                     AnimationChannel.Interpolations.LINEAR),
                             new Keyframe(0.75f, KeyframeAnimations.posVec(0f, 0f, 0f),
                                     AnimationChannel.Interpolations.LINEAR)))
-            .addAnimation("RightArm",
+            .addAnimation("rightArm",
                     new AnimationChannel(AnimationChannel.Targets.ROTATION,
                             new Keyframe(0f, KeyframeAnimations.degreeVec(0f, 0f, 0f),
                                     AnimationChannel.Interpolations.LINEAR),
@@ -309,7 +310,7 @@ public class GoldenSkeletonAnimationsDefinitions {
                                     AnimationChannel.Interpolations.LINEAR),
                             new Keyframe(0.75f, KeyframeAnimations.degreeVec(0.56f, -1.57f, 0.16f),
                                     AnimationChannel.Interpolations.LINEAR)))
-            .addAnimation("LeftArm",
+            .addAnimation("leftArm",
                     new AnimationChannel(AnimationChannel.Targets.POSITION,
                             new Keyframe(0f, KeyframeAnimations.posVec(0f, 0f, 0f),
                                     AnimationChannel.Interpolations.LINEAR),
@@ -319,17 +320,17 @@ public class GoldenSkeletonAnimationsDefinitions {
                                     AnimationChannel.Interpolations.LINEAR),
                             new Keyframe(0.75f, KeyframeAnimations.posVec(0f, 0f, 0f),
                                     AnimationChannel.Interpolations.LINEAR)))
-            .addAnimation("LeftArm",
+            .addAnimation("leftArm",
                     new AnimationChannel(AnimationChannel.Targets.ROTATION,
                             new Keyframe(0f, KeyframeAnimations.degreeVec(0f, 0f, 0f),
                                     AnimationChannel.Interpolations.LINEAR),
-                            new Keyframe(0.2916767f, KeyframeAnimations.degreeVec(-7.5f, 0f, 0f),
+                            new Keyframe(0.29167f, KeyframeAnimations.degreeVec(-7.5f, 0f, 0f),
                                     AnimationChannel.Interpolations.LINEAR),
                             new Keyframe(0.5f, KeyframeAnimations.degreeVec(-12.5f, 0f, 0f),
                                     AnimationChannel.Interpolations.LINEAR),
                             new Keyframe(0.75f, KeyframeAnimations.degreeVec(0f, 0f, 0f),
                                     AnimationChannel.Interpolations.LINEAR)))
-            .addAnimation("RightLeg",
+            .addAnimation("rightLeg",
                     new AnimationChannel(AnimationChannel.Targets.ROTATION,
                             new Keyframe(0f, KeyframeAnimations.degreeVec(0f, 0f, 0f),
                                     AnimationChannel.Interpolations.LINEAR),
@@ -337,7 +338,7 @@ public class GoldenSkeletonAnimationsDefinitions {
                                     AnimationChannel.Interpolations.LINEAR),
                             new Keyframe(0.75f, KeyframeAnimations.degreeVec(0f, 0f, 0f),
                                     AnimationChannel.Interpolations.LINEAR)))
-            .addAnimation("LeftLeg",
+            .addAnimation("leftLeg",
                     new AnimationChannel(AnimationChannel.Targets.ROTATION,
                             new Keyframe(0f, KeyframeAnimations.degreeVec(0f, 0f, 0f),
                                     AnimationChannel.Interpolations.LINEAR),
@@ -346,7 +347,7 @@ public class GoldenSkeletonAnimationsDefinitions {
                             new Keyframe(0.75f, KeyframeAnimations.degreeVec(0f, 0f, 0f),
                                     AnimationChannel.Interpolations.LINEAR))).build();
     public static final AnimationDefinition NAKLON = AnimationDefinition.Builder.withLength(2f)
-            .addAnimation("Head",
+            .addAnimation("head",
                     new AnimationChannel(AnimationChannel.Targets.POSITION,
                             new Keyframe(0f, KeyframeAnimations.posVec(0f, 0f, 0f),
                                     AnimationChannel.Interpolations.LINEAR),
@@ -354,7 +355,7 @@ public class GoldenSkeletonAnimationsDefinitions {
                                     AnimationChannel.Interpolations.LINEAR),
                             new Keyframe(2f, KeyframeAnimations.posVec(0f, 0f, 0f),
                                     AnimationChannel.Interpolations.LINEAR)))
-            .addAnimation("Head",
+            .addAnimation("head",
                     new AnimationChannel(AnimationChannel.Targets.ROTATION,
                             new Keyframe(0f, KeyframeAnimations.degreeVec(0f, 0f, 0f),
                                     AnimationChannel.Interpolations.LINEAR),
@@ -380,7 +381,7 @@ public class GoldenSkeletonAnimationsDefinitions {
                                     AnimationChannel.Interpolations.LINEAR),
                             new Keyframe(1f, KeyframeAnimations.degreeVec(0f, 0f, -5f),
                                     AnimationChannel.Interpolations.LINEAR)))
-            .addAnimation("RightArm",
+            .addAnimation("rightArm",
                     new AnimationChannel(AnimationChannel.Targets.POSITION,
                             new Keyframe(0f, KeyframeAnimations.posVec(0f, 0f, 0f),
                                     AnimationChannel.Interpolations.LINEAR),
@@ -388,7 +389,7 @@ public class GoldenSkeletonAnimationsDefinitions {
                                     AnimationChannel.Interpolations.LINEAR),
                             new Keyframe(2f, KeyframeAnimations.posVec(0f, 0f, 0f),
                                     AnimationChannel.Interpolations.LINEAR)))
-            .addAnimation("RightArm",
+            .addAnimation("rightArm",
                     new AnimationChannel(AnimationChannel.Targets.ROTATION,
                             new Keyframe(0f, KeyframeAnimations.degreeVec(0f, 0f, 0f),
                                     AnimationChannel.Interpolations.LINEAR),
@@ -396,7 +397,7 @@ public class GoldenSkeletonAnimationsDefinitions {
                                     AnimationChannel.Interpolations.LINEAR),
                             new Keyframe(2f, KeyframeAnimations.degreeVec(0f, 0f, 0f),
                                     AnimationChannel.Interpolations.LINEAR)))
-            .addAnimation("LeftArm",
+            .addAnimation("leftArm",
                     new AnimationChannel(AnimationChannel.Targets.POSITION,
                             new Keyframe(0f, KeyframeAnimations.posVec(0f, 0f, 0f),
                                     AnimationChannel.Interpolations.LINEAR),
@@ -404,7 +405,7 @@ public class GoldenSkeletonAnimationsDefinitions {
                                     AnimationChannel.Interpolations.LINEAR),
                             new Keyframe(2f, KeyframeAnimations.posVec(0f, 0f, 0f),
                                     AnimationChannel.Interpolations.LINEAR)))
-            .addAnimation("LeftArm",
+            .addAnimation("leftArm",
                     new AnimationChannel(AnimationChannel.Targets.ROTATION,
                             new Keyframe(0f, KeyframeAnimations.degreeVec(0f, 0f, 0f),
                                     AnimationChannel.Interpolations.LINEAR),
@@ -413,7 +414,7 @@ public class GoldenSkeletonAnimationsDefinitions {
                             new Keyframe(2f, KeyframeAnimations.degreeVec(0f, 0f, 0f),
                                     AnimationChannel.Interpolations.LINEAR))).build();
     public static final AnimationDefinition WALKINGWITHSWORD = AnimationDefinition.Builder.withLength(3f).looping()
-            .addAnimation("Head",
+            .addAnimation("head",
                     new AnimationChannel(AnimationChannel.Targets.POSITION,
                             new Keyframe(0f, KeyframeAnimations.posVec(0f, 0f, 0.3f),
                                     AnimationChannel.Interpolations.LINEAR),
@@ -427,7 +428,7 @@ public class GoldenSkeletonAnimationsDefinitions {
                                     AnimationChannel.Interpolations.LINEAR),
                             new Keyframe(3f, KeyframeAnimations.posVec(0f, 0f, 0.26f),
                                     AnimationChannel.Interpolations.LINEAR)))
-            .addAnimation("Head",
+            .addAnimation("head",
                     new AnimationChannel(AnimationChannel.Targets.ROTATION,
                             new Keyframe(0f, KeyframeAnimations.degreeVec(0f, 0f, 0f),
                                     AnimationChannel.Interpolations.LINEAR),
@@ -459,7 +460,7 @@ public class GoldenSkeletonAnimationsDefinitions {
                                     AnimationChannel.Interpolations.LINEAR),
                             new Keyframe(3f, KeyframeAnimations.degreeVec(0f, 0f, 0f),
                                     AnimationChannel.Interpolations.LINEAR)))
-            .addAnimation("RightArm",
+            .addAnimation("rightArm",
                     new AnimationChannel(AnimationChannel.Targets.POSITION,
                             new Keyframe(0f, KeyframeAnimations.posVec(0f, 0f, -1f),
                                     AnimationChannel.Interpolations.LINEAR),
@@ -469,7 +470,7 @@ public class GoldenSkeletonAnimationsDefinitions {
                                     AnimationChannel.Interpolations.LINEAR),
                             new Keyframe(2f, KeyframeAnimations.posVec(0f, 0f, -1f),
                                     AnimationChannel.Interpolations.LINEAR)))
-            .addAnimation("RightArm",
+            .addAnimation("rightArm",
                     new AnimationChannel(AnimationChannel.Targets.ROTATION,
                             new Keyframe(0f, KeyframeAnimations.degreeVec(-67.5f, 0f, 0f),
                                     AnimationChannel.Interpolations.LINEAR),
@@ -485,7 +486,7 @@ public class GoldenSkeletonAnimationsDefinitions {
                                     AnimationChannel.Interpolations.LINEAR),
                             new Keyframe(3f, KeyframeAnimations.degreeVec(-68.02f, 1.06f, -2.27f),
                                     AnimationChannel.Interpolations.LINEAR)))
-            .addAnimation("LeftArm",
+            .addAnimation("leftArm",
                     new AnimationChannel(AnimationChannel.Targets.ROTATION,
                             new Keyframe(0f, KeyframeAnimations.degreeVec(-25f, 0f, 0f),
                                     AnimationChannel.Interpolations.LINEAR),
@@ -501,7 +502,7 @@ public class GoldenSkeletonAnimationsDefinitions {
                                     AnimationChannel.Interpolations.LINEAR),
                             new Keyframe(3f, KeyframeAnimations.degreeVec(-25f, 0f, 0f),
                                     AnimationChannel.Interpolations.LINEAR)))
-            .addAnimation("RightLeg",
+            .addAnimation("rightLeg",
                     new AnimationChannel(AnimationChannel.Targets.ROTATION,
                             new Keyframe(0f, KeyframeAnimations.degreeVec(-25f, 0f, 0f),
                                     AnimationChannel.Interpolations.LINEAR),
@@ -517,7 +518,7 @@ public class GoldenSkeletonAnimationsDefinitions {
                                     AnimationChannel.Interpolations.LINEAR),
                             new Keyframe(3f, KeyframeAnimations.degreeVec(-25f, 0f, 0f),
                                     AnimationChannel.Interpolations.LINEAR)))
-            .addAnimation("LeftLeg",
+            .addAnimation("leftLeg",
                     new AnimationChannel(AnimationChannel.Targets.ROTATION,
                             new Keyframe(0f, KeyframeAnimations.degreeVec(25f, 0f, 0f),
                                     AnimationChannel.Interpolations.LINEAR),
@@ -533,5 +534,57 @@ public class GoldenSkeletonAnimationsDefinitions {
                                     AnimationChannel.Interpolations.LINEAR),
                             new Keyframe(3f, KeyframeAnimations.degreeVec(25f, 0f, 0f),
                                     AnimationChannel.Interpolations.LINEAR))).build();
-
+    public static final AnimationDefinition PENIS = AnimationDefinition.Builder.withLength(4f).looping()
+            .addAnimation("head",
+                    new AnimationChannel(AnimationChannel.Targets.POSITION,
+                            new Keyframe(0f, KeyframeAnimations.posVec(0f, 0f, 0f),
+                                    AnimationChannel.Interpolations.LINEAR),
+                            new Keyframe(2f, KeyframeAnimations.posVec(0f, 0f, -2f),
+                                    AnimationChannel.Interpolations.LINEAR),
+                            new Keyframe(4f, KeyframeAnimations.posVec(0f, 0.1f, 0f),
+                                    AnimationChannel.Interpolations.LINEAR)))
+            .addAnimation("head",
+                    new AnimationChannel(AnimationChannel.Targets.ROTATION,
+                            new Keyframe(0f, KeyframeAnimations.degreeVec(0f, 0f, 0f),
+                                    AnimationChannel.Interpolations.LINEAR),
+                            new Keyframe(2f, KeyframeAnimations.degreeVec(10f, 0f, 0f),
+                                    AnimationChannel.Interpolations.LINEAR),
+                            new Keyframe(4f, KeyframeAnimations.degreeVec(0f, 0f, 0f),
+                                    AnimationChannel.Interpolations.LINEAR)))
+            .addAnimation("waist",
+                    new AnimationChannel(AnimationChannel.Targets.POSITION,
+                            new Keyframe(0f, KeyframeAnimations.posVec(0f, 0f, 0f),
+                                    AnimationChannel.Interpolations.LINEAR),
+                            new Keyframe(3.9583435f, KeyframeAnimations.posVec(0f, 0f, -0.3f),
+                                    AnimationChannel.Interpolations.LINEAR)))
+            .addAnimation("waist",
+                    new AnimationChannel(AnimationChannel.Targets.ROTATION,
+                            new Keyframe(0f, KeyframeAnimations.degreeVec(0f, 0f, 0f),
+                                    AnimationChannel.Interpolations.LINEAR),
+                            new Keyframe(2f, KeyframeAnimations.degreeVec(14f, 0f, 0f),
+                                    AnimationChannel.Interpolations.LINEAR),
+                            new Keyframe(3.9583435f, KeyframeAnimations.degreeVec(10f, 0f, 0f),
+                                    AnimationChannel.Interpolations.LINEAR)))
+            .addAnimation("waistBack",
+                    new AnimationChannel(AnimationChannel.Targets.ROTATION,
+                            new Keyframe(0f, KeyframeAnimations.degreeVec(0f, 0f, 0f),
+                                    AnimationChannel.Interpolations.LINEAR),
+                            new Keyframe(4f, KeyframeAnimations.degreeVec(-10f, 0f, 0f),
+                                    AnimationChannel.Interpolations.LINEAR)))
+            .addAnimation("rightArm",
+                    new AnimationChannel(AnimationChannel.Targets.POSITION,
+                            new Keyframe(0f, KeyframeAnimations.posVec(0f, 0f, 0f),
+                                    AnimationChannel.Interpolations.LINEAR),
+                            new Keyframe(2f, KeyframeAnimations.posVec(0f, -1f, -2f),
+                                    AnimationChannel.Interpolations.LINEAR),
+                            new Keyframe(4f, KeyframeAnimations.posVec(0f, 0f, 0f),
+                                    AnimationChannel.Interpolations.LINEAR)))
+            .addAnimation("leftArm",
+                    new AnimationChannel(AnimationChannel.Targets.POSITION,
+                            new Keyframe(0f, KeyframeAnimations.posVec(0f, 0f, 0f),
+                                    AnimationChannel.Interpolations.LINEAR),
+                            new Keyframe(2f, KeyframeAnimations.posVec(0f, -1f, -2f),
+                                    AnimationChannel.Interpolations.LINEAR),
+                            new Keyframe(4f, KeyframeAnimations.posVec(0f, 0f, 0f),
+                                    AnimationChannel.Interpolations.LINEAR))).build();
 }

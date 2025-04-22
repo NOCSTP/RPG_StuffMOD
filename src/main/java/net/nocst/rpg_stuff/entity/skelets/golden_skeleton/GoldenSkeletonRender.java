@@ -33,14 +33,7 @@ public class GoldenSkeletonRender extends MobRenderer<GoldenSkeletonEntity, Gold
 
 
         super.render(pEntity, pEntityYaw, pPartialTicks, pMatrixStack, pBuffer, pPackedLight);
-        ItemStack itemstack = pEntity.getMainHandItem(); // або getOffhandItem(), залежно куди хочеш
 
-        if (!itemstack.isEmpty()) {
-            pMatrixStack.pushPose();
-            this.model.leftItem.translateAndRotate(pMatrixStack); // позиціонує предмет у точці leftItem
-            Minecraft.getInstance().getEntityRenderDispatcher().getItemInHandRenderer();
-            pMatrixStack.popPose();
-        }
     }
 
 

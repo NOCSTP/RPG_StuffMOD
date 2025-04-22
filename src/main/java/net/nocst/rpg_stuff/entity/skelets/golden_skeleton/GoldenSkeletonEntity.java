@@ -1,44 +1,37 @@
 package net.nocst.rpg_stuff.entity.skelets.golden_skeleton;
 
+import javax.annotation.Nullable;
+
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
-import net.minecraft.server.level.ServerLevel;
-import net.minecraft.tags.ItemTags;
-import net.minecraft.util.RandomSource;
 import net.minecraft.world.DifficultyInstance;
-import net.minecraft.world.entity.*;
+import net.minecraft.world.entity.AnimationState;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.MobSpawnType;
+import net.minecraft.world.entity.Pose;
+import net.minecraft.world.entity.SpawnGroupData;
+import net.minecraft.world.entity.TamableAnimal;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
-import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
-import net.minecraft.world.entity.animal.IronGolem;
-import net.minecraft.world.entity.animal.Turtle;
 import net.minecraft.world.entity.monster.Monster;
-import net.minecraft.world.entity.monster.ZombifiedPiglin;
-import net.minecraft.world.entity.npc.AbstractVillager;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
-import net.nocst.rpg_stuff.items.ModItems;
-
-import javax.annotation.Nullable;
-import java.util.List;
-import java.util.stream.Collectors;
 
 public class GoldenSkeletonEntity extends Monster {
     private static final EntityDataAccessor<Boolean> ATTACKING =
             SynchedEntityData.defineId(GoldenSkeletonEntity.class, EntityDataSerializers.BOOLEAN);
 
-    final AnimationState attackAnimationState = new AnimationState();
-    private int attackaimationsTimeout = 0;
+    public final AnimationState attackAnimationState = new AnimationState();
+    private int attackAnimationTimeout = 0;
     public GoldenSkeletonEntity(EntityType<? extends Monster> pEntityType, Level pLevel) {
-
         super(pEntityType, pLevel);
     }
 
@@ -63,30 +56,28 @@ public class GoldenSkeletonEntity extends Monster {
     }
 
     private void setupAnimationStates(){
-//        if(this.idleAnimationsTimeout <= 0){
-//            this.idleAnimationsTimeout = this.random.nextInt(40)+80;
-//            this.idleAnimationsState.start(this.tickCount);
-//        } else {
-//            --this.idleAnimationsTimeout;
-//        }
         if(!this.isMoving()){
             if(this.idleAnimationsTimeout <= 0){
-                this.idleAnimationsTimeout = this.random.nextInt(40)+ 80;
+                this.idleAnimationsTimeout = this.random.nextInt(240)+ 80;
                 this.idleAnimationsState.start(this.tickCount);
             } else {
                 --this.idleAnimationsTimeout;
             }
         }
-        if (this.isAttacking() && attackaimationsTimeout<= 0){
-           attackaimationsTimeout= 10;
+        
+        if (this.isAttacking() && attackAnimationTimeout <= 0){
+           attackAnimationTimeout = 20; // Longer timeout to ensure animation completes
            attackAnimationState.start(this.tickCount);
         } else {
-            --this.attackaimationsTimeout;
+            --this.attackAnimationTimeout;
         }
-        if (!this.isAttacking()){
+        
+        // Only stop the animation when it's complete, not immediately when not attacking
+        if (!this.isAttacking() && attackAnimationTimeout <= 0){
             attackAnimationState.stop();
         }
     }
+    
     @Override
     protected void updateWalkAnimation(float pPartialTick){
         float f;
@@ -136,8 +127,4 @@ public class GoldenSkeletonEntity extends Monster {
 
         this.targetSelector.addGoal(1, new HurtByTargetGoal(this));
     }
-
-
-
-
 }

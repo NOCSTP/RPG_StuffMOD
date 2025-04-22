@@ -21,24 +21,24 @@ public class GoldenSkeletonModel<T extends GoldenSkeletonEntity> extends Hierarc
 	private final ModelPart head;
 	private final ModelPart waist;
 	private final ModelPart waistBack;
-	private final ModelPart body;
+	private final ModelPart Body;
 	private final ModelPart rightArm;
 	private final ModelPart leftArm;
-	final ModelPart leftItem;
+	private final ModelPart leftItem;
 	private final ModelPart rightLeg;
 	private final ModelPart leftLeg;
 
 	public GoldenSkeletonModel(ModelPart root) {
 		this.main = root.getChild("main");
-		this.head = this.main.getChild("Head");
+		this.head = this.main.getChild("head");
 		this.waist = this.main.getChild("waist");
 		this.waistBack = this.waist.getChild("waistBack");
-		this.body = this.waistBack.getChild("Body");
-		this.rightArm = this.main.getChild("RightArm");
-		this.leftArm = this.main.getChild("LeftArm");
+		this.Body = this.waistBack.getChild("Body");
+		this.rightArm = this.main.getChild("rightArm");
+		this.leftArm = this.main.getChild("leftArm");
 		this.leftItem = this.leftArm.getChild("leftItem");
-		this.rightLeg = this.main.getChild("RightLeg");
-		this.leftLeg = this.main.getChild("LeftLeg");
+		this.rightLeg = this.main.getChild("rightLeg");
+		this.leftLeg = this.main.getChild("leftLeg");
 	}
 
 	public static LayerDefinition createBodyLayer() {
@@ -47,7 +47,7 @@ public class GoldenSkeletonModel<T extends GoldenSkeletonEntity> extends Hierarc
 
 		PartDefinition main = partdefinition.addOrReplaceChild("main", CubeListBuilder.create(), PartPose.offset(0.0F, 24.0F, 0.0F));
 
-		PartDefinition Head = main.addOrReplaceChild("Head", CubeListBuilder.create().texOffs(0, 0).addBox(-4.0F, -8.0F, -4.0F, 8.0F, 8.0F, 8.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, -24.0F, 0.0F));
+		PartDefinition head = main.addOrReplaceChild("head", CubeListBuilder.create().texOffs(0, 0).addBox(-4.0F, -8.0F, -4.0F, 8.0F, 8.0F, 8.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, -24.0F, 0.0F));
 
 		PartDefinition waist = main.addOrReplaceChild("waist", CubeListBuilder.create(), PartPose.offset(0.0F, -12.0F, 0.0F));
 
@@ -68,17 +68,17 @@ public class GoldenSkeletonModel<T extends GoldenSkeletonEntity> extends Hierarc
 
 		PartDefinition Body = waistBack.addOrReplaceChild("Body", CubeListBuilder.create().texOffs(0, 16).addBox(-4.0F, 0.0F, -2.0F, 8.0F, 12.0F, 4.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, -14.0F, 0.0F));
 
-		PartDefinition RightArm = main.addOrReplaceChild("RightArm", CubeListBuilder.create().texOffs(0, 32).addBox(-1.0F, -2.0F, -1.0F, 2.0F, 12.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offset(-5.0F, -22.0F, 0.0F));
+		PartDefinition rightArm = main.addOrReplaceChild("rightArm", CubeListBuilder.create().texOffs(0, 32).addBox(-1.0F, -2.0F, -1.0F, 2.0F, 12.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offset(-5.0F, -22.0F, 0.0F));
 
-		PartDefinition LeftArm = main.addOrReplaceChild("LeftArm", CubeListBuilder.create().texOffs(8, 32).addBox(-1.0F, -2.0F, -2.0F, 3.0F, 5.0F, 4.0F, new CubeDeformation(0.0F))
+		PartDefinition leftArm = main.addOrReplaceChild("leftArm", CubeListBuilder.create().texOffs(8, 32).addBox(-1.0F, -2.1F, -2.0F, 3.0F, 5.0F, 4.0F, new CubeDeformation(0.0F))
 				.texOffs(0, 32).mirror().addBox(-1.0F, -2.0F, -1.0F, 2.0F, 12.0F, 2.0F, new CubeDeformation(0.0F)).mirror(false), PartPose.offset(5.0F, -22.0F, 0.0F));
 
-		PartDefinition leftItem = LeftArm.addOrReplaceChild("leftItem", CubeListBuilder.create(), PartPose.offset(1.0F, 7.0F, 1.0F));
+		PartDefinition leftItem = leftArm.addOrReplaceChild("leftItem", CubeListBuilder.create(), PartPose.offset(1.0F, 7.0F, 1.0F));
 
-		PartDefinition RightLeg = main.addOrReplaceChild("RightLeg", CubeListBuilder.create().texOffs(32, 0).addBox(-1.0F, 0.0F, -1.0F, 2.0F, 12.0F, 2.0F, new CubeDeformation(0.0F))
+		PartDefinition rightLeg = main.addOrReplaceChild("rightLeg", CubeListBuilder.create().texOffs(32, 0).addBox(-1.0F, 0.0F, -1.0F, 2.0F, 12.0F, 2.0F, new CubeDeformation(0.0F))
 				.texOffs(24, 16).addBox(-2.0F, 0.0F, -2.0F, 3.0F, 12.0F, 3.0F, new CubeDeformation(0.0F)), PartPose.offset(-2.0F, -12.0F, 0.0F));
 
-		PartDefinition LeftLeg = main.addOrReplaceChild("LeftLeg", CubeListBuilder.create().texOffs(24, 31).addBox(-1.0F, 0.0F, -2.0F, 3.0F, 12.0F, 3.0F, new CubeDeformation(0.0F))
+		PartDefinition leftLeg = main.addOrReplaceChild("leftLeg", CubeListBuilder.create().texOffs(24, 31).addBox(-1.0F, 0.0F, -2.0F, 3.0F, 12.0F, 3.0F, new CubeDeformation(0.0F))
 				.texOffs(32, 0).mirror().addBox(-1.0F, 0.0F, -1.0F, 2.0F, 12.0F, 2.0F, new CubeDeformation(0.0F)).mirror(false), PartPose.offset(2.0F, -12.0F, 0.0F));
 
 		return LayerDefinition.create(meshdefinition, 64, 64);
