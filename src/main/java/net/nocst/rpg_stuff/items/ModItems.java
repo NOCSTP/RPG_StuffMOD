@@ -2,12 +2,14 @@ package net.nocst.rpg_stuff.items;
 
 
 import net.minecraft.world.item.*;
+import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.nocst.rpg_stuff.RPGSTUFF;
+import net.nocst.rpg_stuff.entity.ModEntity;
 import net.nocst.rpg_stuff.items.weapon.DryadSword;
 import net.nocst.rpg_stuff.tier.ModTiers;
 
@@ -15,6 +17,10 @@ public class ModItems {
 
     public static final DeferredRegister<Item>ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, RPGSTUFF.MODID);
 
+
+    //eggs
+    public static final RegistryObject<Item> GOLDEN_SKELETON_SPAWN_EGGS = ITEMS.register("golden_skeleton_spawn_egg",
+            ()-> new ForgeSpawnEggItem(ModEntity.GOLDEN_SKELETON, 0x7e9680, 0x5d1c5, new Item.Properties()));
 
     //keys
     public static final RegistryObject<Item> KEY = registerItem("key", new Item.Properties());

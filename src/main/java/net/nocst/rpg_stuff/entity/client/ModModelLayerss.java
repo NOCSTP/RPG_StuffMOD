@@ -9,5 +9,7 @@ public class ModModelLayerss {
 
     public static final ModelLayerLocation SKELETON_LAYER = new ModelLayerLocation(
             new ResourceLocation(RPGSTUFF.MODID, "skeleton"), "main");
+    public static final ModelLayerLocation GOLDEN_SKELETON_LAYER = new ModelLayerLocation(
+            new ResourceLocation(RPGSTUFF.MODID, "golden_skeleton"), "main");
 
 }

@@ -47,6 +47,9 @@ public class ModItemModelProvider extends ItemModelProvider {
         handheldItem(ModItems.OLD_SWORD);
         handheldItem(ModItems.STALIN_SWORD);
         handheldItem(ModItems.STEEL_SWORD);
+
+
+        withExistingParent(ModItems.GOLDEN_SKELETON_SPAWN_EGGS.getId().getPath(), mcLoc("item/template_spawn_egg"));
     }
 
     private ItemModelBuilder simpleItem(RegistryObject<Item> item) {
@@ -65,6 +68,7 @@ public class ModItemModelProvider extends ItemModelProvider {
                 new ResourceLocation("item/handheld"))
                 .texture("layer0", new ResourceLocation(RPGSTUFF.MODID, "item/swords/" + item.getId().getPath()));
     }
+
 
 
 //    private void handheldItem(Item item) {
