@@ -8,7 +8,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.nocst.rpg_stuff.RPGSTUFF;
 import net.nocst.rpg_stuff.entity.client.ModModelLayerss;
 import net.nocst.rpg_stuff.entity.golden_era.golden_skeleton.GoldenSkeletonEntity;
-import net.nocst.rpg_stuff.entity.golden_era.golden_skeleton.GoldenSkeletonModel;
+
 
 public class GoldenWarriorRender extends MobRenderer<GoldenWarriorEntity, GoldenWarriorModel<GoldenWarriorEntity>> {
     public GoldenWarriorRender(EntityRendererProvider.Context pContext) {

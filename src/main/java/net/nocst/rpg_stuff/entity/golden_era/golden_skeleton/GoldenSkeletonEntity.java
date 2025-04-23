@@ -2,6 +2,8 @@ package net.nocst.rpg_stuff.entity.golden_era.golden_skeleton;
 
 import javax.annotation.Nullable;
 
+import net.minecraft.client.model.HierarchicalModel;
+import net.minecraft.client.model.Model;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
@@ -22,10 +24,11 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.nocst.rpg_stuff.entity.basic.BasicAttackGoal;
 import net.nocst.rpg_stuff.entity.basic.BasicEntity;
-
 import java.util.EnumSet;
+import java.util.Random;
 
 public class GoldenSkeletonEntity extends BasicEntity {
+
     private static final EntityDataAccessor<Boolean> ATTACKING =
             SynchedEntityData.defineId(GoldenSkeletonEntity.class, EntityDataSerializers.BOOLEAN);
     private static final EntityDataAccessor<Boolean> IS_HURTING =
@@ -33,17 +36,21 @@ public class GoldenSkeletonEntity extends BasicEntity {
 
     public final AnimationState attackAnimationState = new AnimationState();
     private int attackAnimationTimeout = 0;
-    public GoldenSkeletonEntity(EntityType<? extends Monster> pEntityType, Level pLevel) {
-        super(pEntityType, pLevel);
-    }
-
     public final AnimationState idleAnimationsState = new AnimationState();
     private int idleAnimationsTimeout = 0;
     public final AnimationState hurtAnimationState = new AnimationState();
     private int hurtAnimationTimeout = 0;
     private boolean isHurt = false;
     private int hurtTicksLeft;
-
+//
+//    private static GoldenSkeletonModels getRandomModelVariant() {
+//        GoldenSkeletonModels[] values = GoldenSkeletonModels.values();
+//        return values[new Random().nextInt(values.length)];
+//    }
+    public GoldenSkeletonEntity(EntityType<? extends Monster> pEntityType, Level pLevel) {
+        super(pEntityType, pLevel);
+//        this.modelsType = getRandomModelVariant();
+    }
 
 
 

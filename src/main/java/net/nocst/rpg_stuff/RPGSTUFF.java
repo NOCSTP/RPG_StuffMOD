@@ -1,7 +1,7 @@
 package net.nocst.rpg_stuff;
 
 import net.nocst.rpg_stuff.entity.golden_era.golden_skeleton.GoldenSkeletonEntity;
-import net.nocst.rpg_stuff.entity.golden_era.golden_skeleton.GoldenSkeletonRender;
+import net.nocst.rpg_stuff.entity.golden_era.golden_skeleton.models.GoldenSkeletonRender;
 import net.nocst.rpg_stuff.entity.golden_era.golden_warrior.GoldenWarriorEntity;
 import net.nocst.rpg_stuff.entity.golden_era.golden_warrior.GoldenWarriorRender;
 import org.slf4j.Logger;
@@ -20,6 +20,9 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.nocst.rpg_stuff.block.ModBlocks;
 import net.nocst.rpg_stuff.entity.ModEntity;
 import net.nocst.rpg_stuff.items.ModItems;
+
+import static net.nocst.rpg_stuff.entity.ModEntity.GOLDEN_SKELETON;
+import static net.nocst.rpg_stuff.entity.ModEntity.GOLDEN_WARRIOR;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(RPGSTUFF.MODID)
@@ -47,17 +50,18 @@ public class RPGSTUFF {
         LOGGER.debug("debug mode is on");
     }
 
+
     private void entityAttributeEvent(EntityAttributeCreationEvent event) {
-        event.put(ModEntity.GOLDEN_SKELETON.get(), GoldenSkeletonEntity.createAttributes().build());
-        event.put(ModEntity.GOLDEN_WARRIOR.get(), GoldenWarriorEntity.createAttributes().build());
+        event.put(GOLDEN_SKELETON.get(), GoldenSkeletonEntity.createAttributes().build());
+        event.put(GOLDEN_WARRIOR.get(), GoldenWarriorEntity.createAttributes().build());
     }
 
     @Mod.EventBusSubscriber(modid = MODID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
     public static class ClientModEvents{
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event){
-            EntityRenderers.register(ModEntity.GOLDEN_SKELETON.get(), GoldenSkeletonRender::new);
-            EntityRenderers.register(ModEntity.GOLDEN_WARRIOR.get(), GoldenWarriorRender::new);
+            EntityRenderers.register(GOLDEN_SKELETON.get(), GoldenSkeletonRender::new);
+            EntityRenderers.register(GOLDEN_WARRIOR.get(), GoldenWarriorRender::new);
         }
     }
 }

@@ -4,6 +4,9 @@ import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.nocst.rpg_stuff.RPGSTUFF;
 import net.nocst.rpg_stuff.entity.client.ModModelLayerss;
+import net.nocst.rpg_stuff.entity.golden_era.golden_skeleton.models.GoldenSkeletonModelDamaged;
+import net.nocst.rpg_stuff.entity.golden_era.golden_skeleton.models.GoldenSkeletonModelIde;
+import net.nocst.rpg_stuff.entity.golden_era.golden_skeleton.models.GoldenSkeletonlLayerss;
 import net.nocst.rpg_stuff.entity.golden_era.golden_warrior.GoldenWarriorModel;
 import net.nocst.rpg_stuff.entity.golden_era.golden_skeleton.GoldenSkeletonModel;
 
@@ -11,7 +14,8 @@ import net.nocst.rpg_stuff.entity.golden_era.golden_skeleton.GoldenSkeletonModel
 public class ModEventBusEvents {
 
     public static void registerLayer(EntityRenderersEvent.RegisterLayerDefinitions event){
-        event.registerLayerDefinition(ModModelLayerss.GOLDEN_SKELETON_LAYER, GoldenSkeletonModel::createBodyLayer);
+        event.registerLayerDefinition(GoldenSkeletonlLayerss.GOLDEN_SKELETON_LAYER_IDE, GoldenSkeletonModelIde::createBodyLayer);
+        event.registerLayerDefinition(GoldenSkeletonlLayerss.GOLDEN_SKELETON_LAYER_DAMAGED, GoldenSkeletonModelDamaged::createBodyLayer);
         event.registerLayerDefinition(ModModelLayerss.GOLDEN_WARRIOR_LAYER, GoldenWarriorModel::createBodyLayer);
     }
 

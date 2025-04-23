@@ -6,12 +6,11 @@ import net.minecraft.world.entity.PathfinderMob;
 import net.minecraft.world.entity.ai.goal.Goal;
 import net.minecraft.world.entity.ai.goal.MeleeAttackGoal;
 import net.minecraft.world.level.pathfinder.Path;
-import net.nocst.rpg_stuff.entity.golden_era.golden_skeleton.GoldenSkeletonEntity;
 
 import java.util.EnumSet;
 
 public class BasicAttackGoal extends MeleeAttackGoal {
-    private final GoldenSkeletonEntity entity;
+    private final BasicEntity entity;
     private int attackDelay = 5;
     private double speedModifier;
     private int ticksUntilNextAttack = 5;
@@ -28,9 +27,9 @@ public class BasicAttackGoal extends MeleeAttackGoal {
     private int failedPathFindingPenalty = 0;
     private boolean canPenalize = false;
 
-    public BasicAttackGoal(PathfinderMob pMob, double pSpeedModifier, boolean pFollowingTargettEventIfNotSeen){
+    public BasicAttackGoal( PathfinderMob pMob, double pSpeedModifier, boolean pFollowingTargettEventIfNotSeen){
         super(pMob, pSpeedModifier, pFollowingTargettEventIfNotSeen);
-        this.entity = ((GoldenSkeletonEntity) pMob);
+        this.entity = ((BasicEntity) pMob);
         this.followingTargetEventIfNotSeen = pFollowingTargettEventIfNotSeen;
         this.setFlags(EnumSet.of(Goal.Flag.MOVE, Goal.Flag.LOOK));
         this.speedModifier = pSpeedModifier;
@@ -119,10 +118,9 @@ public class BasicAttackGoal extends MeleeAttackGoal {
     @Override
     protected void checkAndPerformAttack(LivingEntity pEnemy, double pDistToEnemySqr) {
         if (isEnemyWithinAttackDistance(pEnemy, pDistToEnemySqr) && isTimeToAttack()) {
-            entity.setAttacking(isTimeToStartAttackAnimation());
             resetAttackCooldown();
             mob.swing(InteractionHand.MAIN_HAND);
-
+            entity.setAttacking(isTimeToStartAttackAnimation());
             // 👉 Тут можеш реалізувати перевірку на блок, парирування тощо
             mob.doHurtTarget(pEnemy);
         }
