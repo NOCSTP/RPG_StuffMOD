@@ -35,4 +35,3 @@ public class GoldenWarriorRender extends MobRenderer<GoldenWarriorEntity, Golden
 
     }
 }
-Items
