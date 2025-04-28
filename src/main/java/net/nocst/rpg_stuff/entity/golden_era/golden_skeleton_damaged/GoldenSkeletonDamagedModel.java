@@ -1,4 +1,4 @@
-package net.nocst.rpg_stuff.entity.golden_era.golden_skeleton.models;// Made with Blockbench 4.12.4
+package net.nocst.rpg_stuff.entity.golden_era.golden_skeleton_damaged;// Made with Blockbench 4.12.4
 // Exported for Minecraft version 1.17 or later with Mojang mappings
 // Paste this class into your mod and generate all required imports
 
@@ -13,11 +13,10 @@ import net.minecraft.util.Mth;
 import net.minecraft.world.entity.Entity;
 import net.nocst.rpg_stuff.RPGSTUFF;
 import net.nocst.rpg_stuff.entity.golden_era.golden_skeleton.GoldenSkeletonAnimationsDefinitions;
-import net.nocst.rpg_stuff.entity.golden_era.golden_skeleton.GoldenSkeletonEntity;
 
-public class GoldenSkeletonModelDamaged<T extends Entity> extends HierarchicalModel<T> {
+public class GoldenSkeletonDamagedModel<T extends Entity> extends HierarchicalModel<T> {
     // This layer location should be baked with EntityRendererProvider.Context in the entity renderer and passed into this model's constructor
-    public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(new ResourceLocation(RPGSTUFF.MODID, "golden_skeleton"), "main");
+    public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(new ResourceLocation(RPGSTUFF.MODID, "golden_skeleton_damaged"), "main");
     private final ModelPart main;
     private final ModelPart head;
     private final ModelPart waist;
@@ -29,7 +28,7 @@ public class GoldenSkeletonModelDamaged<T extends Entity> extends HierarchicalMo
     private final ModelPart rightLeg;
     private final ModelPart leftLeg;
 
-    public GoldenSkeletonModelDamaged(ModelPart root) {
+    public GoldenSkeletonDamagedModel(ModelPart root) {
         this.main = root.getChild("main");
         this.head = this.main.getChild("head");
         this.waist = this.main.getChild("waist");
@@ -93,14 +92,14 @@ public class GoldenSkeletonModelDamaged<T extends Entity> extends HierarchicalMo
     public void setupAnim(T pEntity, float pLimbSwing, float pLimbSwingAmount, float pAgeInTicks, float pNetHeadYaw, float pHeadPitch) {
         this.root().getAllParts().forEach(ModelPart::resetPose);
         this.applyHeadRotation(pNetHeadYaw, pHeadPitch, pAgeInTicks);
-        GoldenSkeletonEntity goldenSkeleton = ((GoldenSkeletonEntity) pEntity);
+        GoldenSkeletonDamagedEntity goldenSkeleton = ((GoldenSkeletonDamagedEntity) pEntity);
 
         if (goldenSkeleton.isHurtAnimation()){
-            this.animate(goldenSkeleton.hurtAnimationState, GoldenSkeletonAnimationsDefinitions.HITING, pAgeInTicks);
+            this.animate(goldenSkeleton.hurtAnimationState, GoldenSkeletonDamagedAnimationsDefinitions.HITING, pAgeInTicks);
         } else {
             this.animateWalk(GoldenSkeletonAnimationsDefinitions.WALKINGBADIDLE, pLimbSwing, pLimbSwingAmount, 2f, 2.5f);
-            this.animate(goldenSkeleton.idleAnimationsState, GoldenSkeletonAnimationsDefinitions.STAYSEC, pAgeInTicks, 2f);
-            this.animate(goldenSkeleton.attackAnimationState, GoldenSkeletonAnimationsDefinitions.HIT, pAgeInTicks, 2f);
+            this.animate(goldenSkeleton.idleAnimationsState, GoldenSkeletonDamagedAnimationsDefinitions.STAYSEC, pAgeInTicks, 2f);
+            this.animate(goldenSkeleton.attackAnimationState, GoldenSkeletonDamagedAnimationsDefinitions.HIT, pAgeInTicks, 2f);
         }
 
     }

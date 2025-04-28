@@ -1,12 +1,14 @@
-// 1.20.1	2025-04-21T21:22:21.4535377	Item Models: rpg_stuff
+// 1.20.1	2025-04-24T12:44:23.5554021	Item Models: rpg_stuff
 ce28439fa26000c1e5bfa1da77b2296f0419b739 assets/rpg_stuff/models/item/ancient_sword.json
 756e6264f9e603b5ced076ec264243aeac5ec13c assets/rpg_stuff/models/item/ancient_sword_distnetik.json
 da5c658990106918915e6958d27532ba413b4cb3 assets/rpg_stuff/models/item/beginer_sword.json
 b022ec763608a061699a6d61921b59b94f41160a assets/rpg_stuff/models/item/begin_material.json
 59c99ed6412003ea31d456ea741365202de7c234 assets/rpg_stuff/models/item/diamond_sword.json
 51b630b5bddd353f9c4dc647640f3dc0095367ee assets/rpg_stuff/models/item/dryad_sword.json
+63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/rpg_stuff/models/item/golden_skeleton_damaged_spawn_egg.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/rpg_stuff/models/item/golden_skeleton_spawn_egg.json
 29297dd4fae5b2be5b0f35d40d33a08b704af1e8 assets/rpg_stuff/models/item/golden_sword.json
+63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/rpg_stuff/models/item/golden_warrior_spawn_egg.json
 25366588fd0246a87ff392174f94e0bb20d50899 assets/rpg_stuff/models/item/guardian_sword.json
 f07dd9b8d80477afb7c8d8f05a4fabfadc281dbf assets/rpg_stuff/models/item/heavy_iron_sword.json
 9af7fc4dcc2c1243f6a61d52b05cc5b46ed4c7bd assets/rpg_stuff/models/item/holy_sword.json

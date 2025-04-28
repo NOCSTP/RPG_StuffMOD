@@ -51,6 +51,7 @@ public class ModItemModelProvider extends ItemModelProvider {
 
         withExistingParent(ModItems.GOLDEN_SKELETON_SPAWN_EGGS.getId().getPath(), mcLoc("item/template_spawn_egg"));
         withExistingParent(ModItems.GOLDEN_WARRIOR_SPAWN_EGGS.getId().getPath(), mcLoc("item/template_spawn_egg"));
+        withExistingParent(ModItems.GOLDEN_SKELETON_DAMAGED_EGGS.getId().getPath(), mcLoc("item/template_spawn_egg"));
     }
 
     private ItemModelBuilder simpleItem(RegistryObject<Item> item) {

@@ -1,9 +1,18 @@
 package net.nocst.rpg_stuff;
 
+import net.minecraft.client.gui.screens.MenuScreens;
+import net.minecraft.client.model.PlayerModel;
+import net.nocst.rpg_stuff.block.custom.entity.ModBlocksEntities;
 import net.nocst.rpg_stuff.entity.golden_era.golden_skeleton.GoldenSkeletonEntity;
 import net.nocst.rpg_stuff.entity.golden_era.golden_skeleton.models.GoldenSkeletonRender;
+import net.nocst.rpg_stuff.entity.golden_era.golden_skeleton_damaged.GoldenSkeletonDamagedEntity;
+import net.nocst.rpg_stuff.entity.golden_era.golden_skeleton_damaged.GoldenSkeletonDamagedRender;
 import net.nocst.rpg_stuff.entity.golden_era.golden_warrior.GoldenWarriorEntity;
 import net.nocst.rpg_stuff.entity.golden_era.golden_warrior.GoldenWarriorRender;
+import net.nocst.rpg_stuff.items.CreativeModeTabs;
+import net.nocst.rpg_stuff.screen.GemPolishingStationMenu;
+import net.nocst.rpg_stuff.screen.GemPolishingStationScreen;
+import net.nocst.rpg_stuff.screen.ModMenuTypes;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -21,8 +30,7 @@ import net.nocst.rpg_stuff.block.ModBlocks;
 import net.nocst.rpg_stuff.entity.ModEntity;
 import net.nocst.rpg_stuff.items.ModItems;
 
-import static net.nocst.rpg_stuff.entity.ModEntity.GOLDEN_SKELETON;
-import static net.nocst.rpg_stuff.entity.ModEntity.GOLDEN_WARRIOR;
+import static net.nocst.rpg_stuff.entity.ModEntity.*;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(RPGSTUFF.MODID)
@@ -38,8 +46,11 @@ public class RPGSTUFF {
 
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
+        CreativeModeTabs.registries(modEventBus);
 //ModBlockEntities.register(modEventBus);
         ModEntity.register(modEventBus);
+        ModMenuTypes.register(modEventBus);
+        ModBlocksEntities.register(modEventBus);
 
         // Register event handlers
         modEventBus.addListener(this::entityAttributeEvent);
@@ -52,7 +63,8 @@ public class RPGSTUFF {
 
 
     private void entityAttributeEvent(EntityAttributeCreationEvent event) {
-        event.put(GOLDEN_SKELETON.get(), GoldenSkeletonEntity.createAttributes().build());
+        event.put(GOLDEN_SKELETON_IDE.get(), GoldenSkeletonEntity.createAttributes().build());
+        event.put(GOLDEN_SKELETON_DAMAGED.get(), GoldenSkeletonDamagedEntity.createAttributes().build());
         event.put(GOLDEN_WARRIOR.get(), GoldenWarriorEntity.createAttributes().build());
     }
 
@@ -60,8 +72,12 @@ public class RPGSTUFF {
     public static class ClientModEvents{
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event){
-            EntityRenderers.register(GOLDEN_SKELETON.get(), GoldenSkeletonRender::new);
+            EntityRenderers.register(GOLDEN_SKELETON_IDE.get(), GoldenSkeletonRender::new);
+            EntityRenderers.register(GOLDEN_SKELETON_DAMAGED.get(), GoldenSkeletonDamagedRender::new);
             EntityRenderers.register(GOLDEN_WARRIOR.get(), GoldenWarriorRender::new);
+
+
+            MenuScreens.register(ModMenuTypes.GEM_POLISHING_MENU.get(), GemPolishingStationScreen::new);
         }
     }
 }

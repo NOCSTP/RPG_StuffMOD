@@ -4,7 +4,6 @@ package net.nocst.rpg_stuff.items;
 import net.minecraft.world.item.*;
 import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -20,9 +19,11 @@ public class ModItems {
 
     //eggs
     public static final RegistryObject<Item> GOLDEN_SKELETON_SPAWN_EGGS = ITEMS.register("golden_skeleton_spawn_egg",
-            ()-> new ForgeSpawnEggItem(ModEntity.GOLDEN_SKELETON, 0x7e9680, 0x5d1c5, new Item.Properties()));
+            ()-> new ForgeSpawnEggItem(ModEntity.GOLDEN_SKELETON_IDE, 0x7e9680, 0x5d1c5, new Item.Properties()));
     public static final RegistryObject<Item> GOLDEN_WARRIOR_SPAWN_EGGS = ITEMS.register("golden_warrior_spawn_egg",
             ()-> new ForgeSpawnEggItem(ModEntity.GOLDEN_WARRIOR, 0x7e9689, 0x6d1c5, new Item.Properties()));
+    public static final RegistryObject<Item> GOLDEN_SKELETON_DAMAGED_EGGS = ITEMS.register("golden_skeleton_damaged_spawn_egg",
+            ()-> new ForgeSpawnEggItem(ModEntity.GOLDEN_SKELETON_DAMAGED, 0x7e9689, 0x6d1c5, new Item.Properties()));
 
     //keys
     public static final RegistryObject<Item> KEY = registerItem("key", new Item.Properties());

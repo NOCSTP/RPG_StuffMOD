@@ -101,11 +101,11 @@ public class GoldenWarriorModel<T extends Entity> extends HierarchicalModel<T> {
         GoldenWarriorEntity goldenWarrior = ((GoldenWarriorEntity) pEntity);
 
         if (goldenWarrior.isHurtAnimation()){
-            this.animate(goldenWarrior.hurtAnimationState, GoldenWarriorAnimationsDefinitions.MAHGOLOVOY, pAgeInTicks, 5f);
+            this.animate(goldenWarrior.hurtAnimationState, GoldenWarriorAnimationsDefinitions.MAHGOLOVOY, pAgeInTicks, 0.5f);
         } else {
+            this.animate(goldenWarrior.attackAnimationState, GoldenWarriorAnimationsDefinitions.HIT, pAgeInTicks, 2f);
             this.animateWalk(GoldenWarriorAnimationsDefinitions.WALKING, pLimbSwing, pLimbSwingAmount, 2f, 2.5f);
             this.animate(goldenWarrior.idleAnimationsState, GoldenWarriorAnimationsDefinitions.STAYSEC, pAgeInTicks, 2f);
-            this.animate(goldenWarrior.attackAnimationState, GoldenWarriorAnimationsDefinitions.HIT, pAgeInTicks, 2f);
         }
 
     }

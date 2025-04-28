@@ -1,31 +1,31 @@
-[21Apr.2025 22:33:27.585] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher running: args [--launchTarget, forgedatauserdev, --assetIndex, 5, --assetsDir, C:\Users\NOCST\.gradle\caches\forge_gradle\assets, --gameDir, ., --fml.forgeVersion, 47.0.19, --fml.mcVersion, 1.20.1, --fml.forgeGroup, net.minecraftforge, --fml.mcpVersion, 20230612.114412, --mod, rpg_stuff, --all, --output, B:\BlockPulse\PROGRAMMING\mod development\RPG_Stuff\src\generated\resources, --existing, B:\BlockPulse\PROGRAMMING\mod development\RPG_Stuff\src\main\resources]
-[21Apr.2025 22:33:27.589] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher 10.0.9+10.0.9+main.dcd20f30 starting: java version 17.0.11 by Eclipse Adoptium; OS Windows 11 arch amd64 version 10.0
-[21Apr.2025 22:33:27.688] [main/INFO] [net.minecraftforge.fml.loading.ImmediateWindowHandler/]: ImmediateWindowProvider not loading because launch target is forgedatauserdev
-[21Apr.2025 22:33:27.729] [main/INFO] [mixin/]: SpongePowered MIXIN Subsystem Version=0.8.5 Source=union:/C:/Users/NOCST/.gradle/caches/modules-2/files-2.1/org.spongepowered/mixin/0.8.5/9d1c0c3a304ae6697ecd477218fa61b850bf57fc/mixin-0.8.5.jar%23128!/ Service=ModLauncher Env=CLIENT
-[21Apr.2025 22:33:27.961] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\NOCST\.gradle\caches\modules-2\files-2.1\net.minecraftforge\javafmllanguage\1.20.1-47.0.19\11325ab7cc62ad123c202b63216724c0a9af1a21\javafmllanguage-1.20.1-47.0.19.jar is missing mods.toml file
-[21Apr.2025 22:33:27.963] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\NOCST\.gradle\caches\modules-2\files-2.1\net.minecraftforge\lowcodelanguage\1.20.1-47.0.19\43bcf9e8002338c09b0f793771f6471e5fb74dd7\lowcodelanguage-1.20.1-47.0.19.jar is missing mods.toml file
-[21Apr.2025 22:33:27.966] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\NOCST\.gradle\caches\modules-2\files-2.1\net.minecraftforge\mclanguage\1.20.1-47.0.19\9ad401a1888591fa336b5685d1572aa4387cf31d\mclanguage-1.20.1-47.0.19.jar is missing mods.toml file
-[21Apr.2025 22:33:27.969] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\NOCST\.gradle\caches\modules-2\files-2.1\net.minecraftforge\fmlcore\1.20.1-47.0.19\fb98a8fe718272b2822fb1798215d25e97ce84e6\fmlcore-1.20.1-47.0.19.jar is missing mods.toml file
-[21Apr.2025 22:33:28.042] [main/INFO] [net.minecraftforge.fml.loading.moddiscovery.JarInJarDependencyLocator/]: No dependencies to load found. Skipping!
-[21Apr.2025 22:33:29.048] [main/INFO] [cpw.mods.modlauncher.LaunchServiceHandler/MODLAUNCHER]: Launching target 'forgedatauserdev' with arguments [--gameDir, ., --assetsDir, C:\Users\NOCST\.gradle\caches\forge_gradle\assets, --assetIndex, 5, --mod, rpg_stuff, --all, --output, B:\BlockPulse\PROGRAMMING\mod development\RPG_Stuff\src\generated\resources, --existing, B:\BlockPulse\PROGRAMMING\mod development\RPG_Stuff\src\main\resources]
-[21Apr.2025 22:33:29.350] [main/INFO] [net.minecraftforge.data.loading.DatagenModLoader/]: Initializing Data Gatherer for mods [rpg_stuff]
-[21Apr.2025 22:33:32.974] [modloading-worker-0/INFO] [net.minecraftforge.common.ForgeMod/FORGEMOD]: Forge mod loading, version 47.0.19, for MC 1.20.1 with MCP 20230612.114412
-[21Apr.2025 22:33:32.976] [modloading-worker-0/INFO] [net.minecraftforge.common.MinecraftForge/FORGE]: MinecraftForge v47.0.19 Initialized
-[21Apr.2025 22:33:33.371] [main/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/NOCST/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.20.1-47.0.19_mapped_parchment_2023.06.26-1.20.1/forge-1.20.1-47.0.19_mapped_parchment_2023.06.26-1.20.1-recomp.jar%23191!/assets/.mcassetsroot' uses unexpected schema
-[21Apr.2025 22:33:33.371] [main/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/NOCST/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.20.1-47.0.19_mapped_parchment_2023.06.26-1.20.1/forge-1.20.1-47.0.19_mapped_parchment_2023.06.26-1.20.1-recomp.jar%23191!/data/.mcassetsroot' uses unexpected schema
-[21Apr.2025 22:33:33.547] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Recipes
-[21Apr.2025 22:33:33.551] [main/INFO] [net.minecraft.data.DataGenerator/]: Recipes finished after 3 ms
-[21Apr.2025 22:33:33.551] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Loot Tables
-[21Apr.2025 22:33:33.555] [main/INFO] [net.minecraft.data.DataGenerator/]: Loot Tables finished after 4 ms
-[21Apr.2025 22:33:33.555] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Block States: rpg_stuff
-[21Apr.2025 22:33:33.556] [main/INFO] [net.minecraft.data.DataGenerator/]: Block States: rpg_stuff finished after 0 ms
-[21Apr.2025 22:33:33.556] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Item Models: rpg_stuff
-[21Apr.2025 22:33:33.580] [main/INFO] [net.minecraft.data.DataGenerator/]: Item Models: rpg_stuff finished after 23 ms
-[21Apr.2025 22:33:33.580] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Registries
-[21Apr.2025 22:33:33.666] [main/INFO] [net.minecraft.data.DataGenerator/]: Registries finished after 85 ms
-[21Apr.2025 22:33:33.666] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Tags for minecraft:block mod id rpg_stuff
-[21Apr.2025 22:33:33.668] [main/INFO] [net.minecraft.data.DataGenerator/]: Tags for minecraft:block mod id rpg_stuff finished after 2 ms
-[21Apr.2025 22:33:33.669] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Tags for minecraft:item mod id rpg_stuff
-[21Apr.2025 22:33:33.670] [main/INFO] [net.minecraft.data.DataGenerator/]: Tags for minecraft:item mod id rpg_stuff finished after 0 ms
-[21Apr.2025 22:33:33.670] [main/INFO] [net.minecraft.data.DataGenerator/]: All providers took: 123 ms
-[21Apr.2025 22:33:33.673] [main/INFO] [net.minecraft.data.HashCache/]: Caching: total files: 24, old count: 24, new count: 25, removed stale: 0, written: 0
+[25Apr.2025 03:12:10.385] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher running: args [--launchTarget, forgedatauserdev, --assetIndex, 5, --assetsDir, C:\Users\NOCST\.gradle\caches\forge_gradle\assets, --gameDir, ., --fml.forgeVersion, 47.0.19, --fml.mcVersion, 1.20.1, --fml.forgeGroup, net.minecraftforge, --fml.mcpVersion, 20230612.114412, --mod, rpg_stuff, --all, --output, B:\BlockPulse\PROGRAMMING\mod development\RPG_Stuff\src\generated\resources, --existing, B:\BlockPulse\PROGRAMMING\mod development\RPG_Stuff\src\main\resources]
+[25Apr.2025 03:12:10.390] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher 10.0.9+10.0.9+main.dcd20f30 starting: java version 17.0.11 by Eclipse Adoptium; OS Windows 11 arch amd64 version 10.0
+[25Apr.2025 03:12:10.485] [main/INFO] [net.minecraftforge.fml.loading.ImmediateWindowHandler/]: ImmediateWindowProvider not loading because launch target is forgedatauserdev
+[25Apr.2025 03:12:10.525] [main/INFO] [mixin/]: SpongePowered MIXIN Subsystem Version=0.8.5 Source=union:/C:/Users/NOCST/.gradle/caches/modules-2/files-2.1/org.spongepowered/mixin/0.8.5/9d1c0c3a304ae6697ecd477218fa61b850bf57fc/mixin-0.8.5.jar%23128!/ Service=ModLauncher Env=CLIENT
+[25Apr.2025 03:12:10.757] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\NOCST\.gradle\caches\modules-2\files-2.1\net.minecraftforge\javafmllanguage\1.20.1-47.0.19\11325ab7cc62ad123c202b63216724c0a9af1a21\javafmllanguage-1.20.1-47.0.19.jar is missing mods.toml file
+[25Apr.2025 03:12:10.759] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\NOCST\.gradle\caches\modules-2\files-2.1\net.minecraftforge\lowcodelanguage\1.20.1-47.0.19\43bcf9e8002338c09b0f793771f6471e5fb74dd7\lowcodelanguage-1.20.1-47.0.19.jar is missing mods.toml file
+[25Apr.2025 03:12:10.761] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\NOCST\.gradle\caches\modules-2\files-2.1\net.minecraftforge\mclanguage\1.20.1-47.0.19\9ad401a1888591fa336b5685d1572aa4387cf31d\mclanguage-1.20.1-47.0.19.jar is missing mods.toml file
+[25Apr.2025 03:12:10.764] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\NOCST\.gradle\caches\modules-2\files-2.1\net.minecraftforge\fmlcore\1.20.1-47.0.19\fb98a8fe718272b2822fb1798215d25e97ce84e6\fmlcore-1.20.1-47.0.19.jar is missing mods.toml file
+[25Apr.2025 03:12:10.829] [main/INFO] [net.minecraftforge.fml.loading.moddiscovery.JarInJarDependencyLocator/]: No dependencies to load found. Skipping!
+[25Apr.2025 03:12:11.809] [main/INFO] [cpw.mods.modlauncher.LaunchServiceHandler/MODLAUNCHER]: Launching target 'forgedatauserdev' with arguments [--gameDir, ., --assetsDir, C:\Users\NOCST\.gradle\caches\forge_gradle\assets, --assetIndex, 5, --mod, rpg_stuff, --all, --output, B:\BlockPulse\PROGRAMMING\mod development\RPG_Stuff\src\generated\resources, --existing, B:\BlockPulse\PROGRAMMING\mod development\RPG_Stuff\src\main\resources]
+[25Apr.2025 03:12:12.073] [main/INFO] [net.minecraftforge.data.loading.DatagenModLoader/]: Initializing Data Gatherer for mods [rpg_stuff]
+[25Apr.2025 03:12:15.444] [modloading-worker-0/INFO] [net.minecraftforge.common.ForgeMod/FORGEMOD]: Forge mod loading, version 47.0.19, for MC 1.20.1 with MCP 20230612.114412
+[25Apr.2025 03:12:15.448] [modloading-worker-0/INFO] [net.minecraftforge.common.MinecraftForge/FORGE]: MinecraftForge v47.0.19 Initialized
+[25Apr.2025 03:12:15.840] [main/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/NOCST/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.20.1-47.0.19_mapped_parchment_2023.06.26-1.20.1/forge-1.20.1-47.0.19_mapped_parchment_2023.06.26-1.20.1-recomp.jar%23191!/assets/.mcassetsroot' uses unexpected schema
+[25Apr.2025 03:12:15.847] [main/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/NOCST/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.20.1-47.0.19_mapped_parchment_2023.06.26-1.20.1/forge-1.20.1-47.0.19_mapped_parchment_2023.06.26-1.20.1-recomp.jar%23191!/data/.mcassetsroot' uses unexpected schema
+[25Apr.2025 03:12:16.022] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Recipes
+[25Apr.2025 03:12:16.025] [main/INFO] [net.minecraft.data.DataGenerator/]: Recipes finished after 3 ms
+[25Apr.2025 03:12:16.025] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Loot Tables
+[25Apr.2025 03:12:16.030] [main/INFO] [net.minecraft.data.DataGenerator/]: Loot Tables finished after 3 ms
+[25Apr.2025 03:12:16.030] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Block States: rpg_stuff
+[25Apr.2025 03:12:16.130] [main/INFO] [net.minecraft.data.DataGenerator/]: Block States: rpg_stuff finished after 100 ms
+[25Apr.2025 03:12:16.130] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Item Models: rpg_stuff
+[25Apr.2025 03:12:16.149] [main/INFO] [net.minecraft.data.DataGenerator/]: Item Models: rpg_stuff finished after 17 ms
+[25Apr.2025 03:12:16.149] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Registries
+[25Apr.2025 03:12:16.163] [main/INFO] [net.minecraft.data.DataGenerator/]: Registries finished after 13 ms
+[25Apr.2025 03:12:16.163] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Tags for minecraft:block mod id rpg_stuff
+[25Apr.2025 03:12:16.166] [main/INFO] [net.minecraft.data.DataGenerator/]: Tags for minecraft:block mod id rpg_stuff finished after 3 ms
+[25Apr.2025 03:12:16.166] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Tags for minecraft:item mod id rpg_stuff
+[25Apr.2025 03:12:16.167] [main/INFO] [net.minecraft.data.DataGenerator/]: Tags for minecraft:item mod id rpg_stuff finished after 0 ms
+[25Apr.2025 03:12:16.167] [main/INFO] [net.minecraft.data.DataGenerator/]: All providers took: 144 ms
+[25Apr.2025 03:12:16.170] [main/INFO] [net.minecraft.data.HashCache/]: Caching: total files: 27, old count: 27, new count: 28, removed stale: 0, written: 0

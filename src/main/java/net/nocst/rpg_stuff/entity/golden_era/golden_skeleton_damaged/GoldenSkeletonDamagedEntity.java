@@ -1,4 +1,4 @@
-package net.nocst.rpg_stuff.entity.golden_era.golden_warrior;
+package net.nocst.rpg_stuff.entity.golden_era.golden_skeleton_damaged;
 
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
@@ -9,8 +9,6 @@ import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
-import net.minecraft.world.entity.ai.goal.FloatGoal;
-import net.minecraft.world.entity.ai.goal.MeleeAttackGoal;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.monster.Monster;
@@ -21,29 +19,33 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.nocst.rpg_stuff.entity.basic.BasicAttackGoal;
 import net.nocst.rpg_stuff.entity.basic.BasicEntity;
-import net.nocst.rpg_stuff.entity.golden_era.golden_skeleton.GoldenSkeletonEntity;
 
 import javax.annotation.Nullable;
 
-public class GoldenWarriorEntity extends BasicEntity {
+public class GoldenSkeletonDamagedEntity extends BasicEntity {
 
     private static final EntityDataAccessor<Boolean> ATTACKING =
-            SynchedEntityData.defineId(GoldenWarriorEntity.class, EntityDataSerializers.BOOLEAN);
+            SynchedEntityData.defineId(GoldenSkeletonDamagedEntity.class, EntityDataSerializers.BOOLEAN);
     private static final EntityDataAccessor<Boolean> IS_HURTING =
-            SynchedEntityData.defineId(GoldenWarriorEntity.class, EntityDataSerializers.BOOLEAN);
+            SynchedEntityData.defineId(GoldenSkeletonDamagedEntity.class, EntityDataSerializers.BOOLEAN);
 
     public final AnimationState attackAnimationState = new AnimationState();
     private int attackAnimationTimeout = 0;
-    public GoldenWarriorEntity(EntityType<? extends Monster> pEntityType, Level pLevel) {
-        super(pEntityType, pLevel);
-    }
     public final AnimationState idleAnimationsState = new AnimationState();
     private int idleAnimationsTimeout = 0;
     public final AnimationState hurtAnimationState = new AnimationState();
     private int hurtAnimationTimeout = 0;
     private boolean isHurt = false;
     private int hurtTicksLeft;
-
+//
+//    private static GoldenSkeletonModels getRandomModelVariant() {
+//        GoldenSkeletonModels[] values = GoldenSkeletonModels.values();
+//        return values[new Random().nextInt(values.length)];
+//    }
+    public GoldenSkeletonDamagedEntity(EntityType<? extends Monster> pEntityType, Level pLevel) {
+        super(pEntityType, pLevel);
+//        this.modelsType = getRandomModelVariant();
+    }
 
 
 
@@ -79,10 +81,10 @@ public class GoldenWarriorEntity extends BasicEntity {
                 --this.idleAnimationsTimeout;
             }
         }
-
+        
         if (this.isAttacking() && attackAnimationTimeout <= 0){
-            attackAnimationTimeout = 20; // Longer timeout to ensure animation completes
-            attackAnimationState.start(this.tickCount);
+           attackAnimationTimeout = 20; // Longer timeout to ensure animation completes
+           attackAnimationState.start(this.tickCount);
         } else {
             --this.attackAnimationTimeout;
         }
@@ -114,7 +116,7 @@ public class GoldenWarriorEntity extends BasicEntity {
 
         return result;
     }
-
+    
     @Override
     protected void updateWalkAnimation(float pPartialTick){
         float f;
@@ -167,12 +169,12 @@ public class GoldenWarriorEntity extends BasicEntity {
 
     @Override
     protected void registerGoals() {
-        this.goalSelector.addGoal(0, new WarriorAttackGoal(this, 1.0D, true));
-        this.goalSelector.addGoal(1, new FloatGoal(this));
+        this.goalSelector.addGoal(2, new BasicAttackGoal(this, 1.0D, true));
 
         this.targetSelector.addGoal(1, new HurtByTargetGoal(this));
         this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, Player.class, true));
         this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<>(this, TamableAnimal.class, true));
 
+        this.targetSelector.addGoal(1, new HurtByTargetGoal(this));
     }
 }

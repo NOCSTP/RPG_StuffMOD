@@ -5,6 +5,7 @@ import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.Items;
 import net.nocst.rpg_stuff.RPGSTUFF;
 import net.nocst.rpg_stuff.entity.client.ModModelLayerss;
 import net.nocst.rpg_stuff.entity.golden_era.golden_skeleton.GoldenSkeletonEntity;
@@ -34,3 +35,4 @@ public class GoldenWarriorRender extends MobRenderer<GoldenWarriorEntity, Golden
 
     }
 }
+Items

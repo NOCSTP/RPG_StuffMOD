@@ -1,15 +1,16 @@
-package net.nocst.rpg_stuff.entity.basic;
+package net.nocst.rpg_stuff.entity.golden_era.golden_warrior;
 
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.PathfinderMob;
-import net.minecraft.world.entity.ai.goal.Goal;
 import net.minecraft.world.entity.ai.goal.MeleeAttackGoal;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.pathfinder.Path;
+import net.nocst.rpg_stuff.entity.basic.BasicEntity;
 
 import java.util.EnumSet;
 
-public class BasicAttackGoal extends MeleeAttackGoal {
+public class WarriorAttackGoal extends MeleeAttackGoal {
     private final BasicEntity entity;
     private int attackDelay = 10;
     private double speedModifier;
@@ -27,11 +28,11 @@ public class BasicAttackGoal extends MeleeAttackGoal {
     private int failedPathFindingPenalty = 0;
     private boolean canPenalize = false;
 
-    public BasicAttackGoal( PathfinderMob pMob, double pSpeedModifier, boolean pFollowingTargettEventIfNotSeen){
+    public WarriorAttackGoal(PathfinderMob pMob, double pSpeedModifier, boolean pFollowingTargettEventIfNotSeen){
         super(pMob, pSpeedModifier, pFollowingTargettEventIfNotSeen);
         this.entity = ((BasicEntity) pMob);
         this.followingTargetEventIfNotSeen = pFollowingTargettEventIfNotSeen;
-        this.setFlags(EnumSet.of(Goal.Flag.MOVE, Goal.Flag.LOOK));
+        this.setFlags(EnumSet.of(Flag.MOVE, Flag.LOOK));
         this.speedModifier = pSpeedModifier;
 
     }
@@ -126,4 +127,5 @@ public class BasicAttackGoal extends MeleeAttackGoal {
         }
 
     }
+
 }
