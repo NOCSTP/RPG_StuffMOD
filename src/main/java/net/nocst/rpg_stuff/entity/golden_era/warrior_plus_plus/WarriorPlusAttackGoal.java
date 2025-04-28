@@ -179,7 +179,7 @@ public class WarriorPlusAttackGoal extends Goal {
                     target.getZ() - this.mob.getZ()
             ).normalize().scale(WarriorPlusPlusEntity.AttackType.DashAttack.knockback);
             target.push(knockbackVec.x, 0.1, knockbackVec.z);
-        }
+        }//de
     }
 
     protected void resetAttackCooldown() {
