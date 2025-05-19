@@ -2,7 +2,7 @@ package net.nocst.rpg_stuff;
 
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.model.PlayerModel;
-import net.nocst.rpg_stuff.block.custom.entity.ModBlocksEntities;
+//import net.nocst.rpg_stuff.block.custom.entity.ModBlocksEntities;
 import net.nocst.rpg_stuff.entity.golden_era.golden_skeleton.GoldenSkeletonEntity;
 import net.nocst.rpg_stuff.entity.golden_era.golden_skeleton.models.GoldenSkeletonRender;
 import net.nocst.rpg_stuff.entity.golden_era.golden_skeleton_damaged.GoldenSkeletonDamagedEntity;
@@ -10,8 +10,6 @@ import net.nocst.rpg_stuff.entity.golden_era.golden_skeleton_damaged.GoldenSkele
 import net.nocst.rpg_stuff.entity.golden_era.golden_warrior.GoldenWarriorEntity;
 import net.nocst.rpg_stuff.entity.golden_era.golden_warrior.GoldenWarriorRender;
 import net.nocst.rpg_stuff.items.CreativeModeTabs;
-import net.nocst.rpg_stuff.screen.GemPolishingStationMenu;
-import net.nocst.rpg_stuff.screen.GemPolishingStationScreen;
 import net.nocst.rpg_stuff.screen.ModMenuTypes;
 import org.slf4j.Logger;
 
@@ -42,23 +40,23 @@ public class RPGSTUFF {
     // Create a Deferred Register to hold Blocks which will all be registered under the "examplemod" namespace
 
     public RPGSTUFF() {
-        IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+            IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
-        ModItems.register(modEventBus);
-        ModBlocks.register(modEventBus);
-        CreativeModeTabs.registries(modEventBus);
-//ModBlockEntities.register(modEventBus);
-        ModEntity.register(modEventBus);
-        ModMenuTypes.register(modEventBus);
-        ModBlocksEntities.register(modEventBus);
+            ModItems.register(modEventBus);
+            ModBlocks.register(modEventBus);
+            CreativeModeTabs.registries(modEventBus);
+    //ModBlockEntities.register(modEventBus);
+            ModEntity.register(modEventBus);
+            ModMenuTypes.register(modEventBus);
+//            ModBlocksEntities.register(modEventBus);
 
-        // Register event handlers
-        modEventBus.addListener(this::entityAttributeEvent);
+            // Register event handlers
+            modEventBus.addListener(this::entityAttributeEvent);
 
-        // Register ourselves for server and other game events we are interested in
-        MinecraftForge.EVENT_BUS.register(this);
+            // Register ourselves for server and other game events we are interested in
+            MinecraftForge.EVENT_BUS.register(this);
 
-        LOGGER.debug("debug mode is on");
+            LOGGER.debug("debug mode is on");
     }
 
 
@@ -77,7 +75,7 @@ public class RPGSTUFF {
             EntityRenderers.register(GOLDEN_WARRIOR.get(), GoldenWarriorRender::new);
 
 
-            MenuScreens.register(ModMenuTypes.GEM_POLISHING_MENU.get(), GemPolishingStationScreen::new);
+//            MenuScreens.register(ModMenuTypes.GEM_POLISHING_MENU.get(), GemPolishingStationScreen::new);
         }
     }
 }

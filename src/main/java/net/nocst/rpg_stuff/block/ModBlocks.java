@@ -10,7 +10,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.nocst.rpg_stuff.RPGSTUFF;
-import net.nocst.rpg_stuff.block.custom.GemPolishingStationBlock;
+import net.nocst.rpg_stuff.block.custom.InteractiveBlock;
 import net.nocst.rpg_stuff.items.ModItems;
 
 import java.util.function.Supplier;
@@ -25,8 +25,8 @@ public class ModBlocks {
 //    public static final RegistryObject<Block> CLICKED_BLOCK = registerBlock("clicked_block",
 //            ()-> new ModClickedBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)));
 
-    public static final RegistryObject<Block> GEM_POLISHING_SATION = registerBlock("gem_polishing_station",
-            ()-> new GemPolishingStationBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).noOcclusion()));
+    public static final RegistryObject<Block> INTERACTIVE_BLOCK = registerBlock("interactive_block",
+            ()-> new InteractiveBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).noOcclusion()));
 
 
 

@@ -14,8 +14,7 @@ public class ModMenuTypes {
     public static final DeferredRegister MENUS =
             DeferredRegister.create(ForgeRegistries.MENU_TYPES, RPGSTUFF.MODID);
 
-    public static final RegistryObject<MenuType<GemPolishingStationMenu>> GEM_POLISHING_MENU =
-            registerMenuType("gem_polishing_menu", GemPolishingStationMenu::new);
+
 
 
     private static <T extends AbstractContainerMenu> RegistryObject<MenuType<T>> registerMenuType(String name, IContainerFactory<T> factory) {
